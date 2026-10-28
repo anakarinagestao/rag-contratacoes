@@ -191,8 +191,8 @@ O projeto foi construído em equipe. A divisão abaixo resume o foco de cada pes
 
 | Pessoa | Foco |
 |---|---|
-| Ana Karina [@anakrinagestao](https://github.com/anakarinagestao) | base normativa, demonstração e ajustes deste repositório |
-| Ester Neves [@EsterNevess](https://github.com/EsterNevess) | base normativa (com Ana Karina), demonstração e ajustes do analisador, das mensagens de erro e das recusas.
+| Ana Karina [@anakarinagestao](https://github.com/anakarinagestao) | base normativa, demonstração e ajustes deste repositório |
+| Ester Neves | base normativa (com Ana Karina), demonstração e ajustes do analisador, das mensagens de erro e das recusas.
 | Ana Karina | base normativa |
 | Alisson Lima | base estruturada, roteamento e índice consolidado |
 | Luciano Oliveira | base estruturada e melhorias do RAG |
