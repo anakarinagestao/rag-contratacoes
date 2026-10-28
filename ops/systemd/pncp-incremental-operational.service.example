@@ -1,0 +1,22 @@
+[Unit]
+Description=Janela incremental operacional controlada do PNCP/RJ
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/Área de Trabalho/desafio-contratacoes/rag-grande-desafio-grupo03-contratacoes-publicas
+EnvironmentFile=%h/.config/pncp-incremental-operational.env
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/usr/bin/python3 -m src.fetch_incremental --resource contratacao --start-date ${PNCP_START_DATE} --end-date ${PNCP_END_DATE} --uf RJ --modality ${PNCP_MODALITY} --db-path ${PNCP_DB_PATH} --confirm-operational-database ${PNCP_DB_PATH} --log-path ${PNCP_LOG_PATH} --job-name ${PNCP_JOB_NAME} --worker-id systemd-operational --coverage-name pncp-contratacao-rj-modalidades-v1 --coverage-member ${PNCP_COVERAGE_MEMBER} --coverage-members $PNCP_COVERAGE_MEMBERS --online-operational --resume
+Restart=on-failure
+RestartSec=1800
+TimeoutStartSec=infinity
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths="%h/Área de Trabalho/desafio-contratacoes/rag-grande-desafio-grupo03-contratacoes-publicas/data/debug"
+ReadWritePaths="%h/Área de Trabalho/desafio-contratacoes/rag-grande-desafio-grupo03-contratacoes-publicas/logs"
+
+# Unidade de recuperação de uma janela datada, não serviço recorrente.
+# Não habilite no boot e não reinicie depois de a janela concluir.

@@ -1,0 +1,446 @@
+{
+  "schema_version": 1,
+  "review_policy": "human_validation_required",
+  "cases": [
+    {
+      "id": "normativa_fiscais",
+      "question": "Quais são as competências comuns dos fiscais de contrato e as atribuições específicas dos fiscais técnicos e administrativos?",
+      "aspects": [
+        "competências comuns",
+        "atribuições do fiscal técnico",
+        "atribuições do fiscal administrativo"
+      ],
+      "candidates": [
+        {
+          "rank_candidate": 1,
+          "chunk_id": "542c01d13f3c1ee041db4c18",
+          "document_id": 1174,
+          "document_title": "139/2026.pdf",
+          "text": "## 2. FUNDAMENTAÇÃO E DESCRIÇÃO DA NECESSIDADE DA CONTRATAÇÃO  \n- 2.1. A contratação decorre da necessidade de capacitação e aperfeiçoamento profissional do servidor Rafael da Silva Santos, Analista em Ciência e Tecnologia, lotado na Seção de Contratos do Instituto de Engenharia Nuclear - SECCOT/IEN, cujas atribuições estão diretamente relacionadas à elaboração, análise e gestão dos contratos administrativos celebrados pela Unidade.\n- 2.2. No exercício de suas atividades, o servidor atua na instrução de processos de alteração contratual, incluindo acréscimos, supressões, reajustes, repactuações e prorrogações, na elaboração de minutas de contratos, termos aditivos e apostilamentos, na apuração de infrações contratuais e na orientação dos gestores e fiscais quanto à aplicação da Lei nº 14.133, de 1º de abril de 2021, e das demais normas pertinentes.\n- 2.3. A programação do 13º Contratos Week - Semana Nacional de Estudos Avançados em Contratos Administrativos contempla conteúdos diretamente relacionados às atividades desempenhadas pela SECCOT, entre os quais aditivos contratuais e seus limites legais, inexecução contratual e aplicação de penalidades, gestão e fiscalização de contratos de terceirização, planejamento e gestão de prorrogações, cláusulas exorbitantes, governança em contratações públicas e controle externo dos contratos administrativos.\n- 2.4. A participação no evento contribuirá para a atualização dos conhecimentos técnicos do servidor, o aperfeiçoamento dos procedimentos adotados pela Seção de Contratos, a redução de riscos na execução contratual e o fortalecimento da governança das contratações do IEN.\n- 2.5. A ação de desenvolvimento está alinhada ao aprimoramento das competências necessárias ao desempenho das atribuições dos agentes públicos que atuam na gestão de contratos e ao Plano de Desenvolvimento de Pessoas da CNEN, em conformidade com as diretrizes estabelecidas pelo Decreto nº 9.991, de 28 de agosto de 2019.\n- 2.6. O quantitativo de uma inscrição corresponde à participação do servidor indicado no processo, mostrando-se suficiente e adequado para o atendimento da necessidade identificada.  \nNo modelo, ainda há o subitem referente ao Plano de Contratações Anual. Como os documentos anexados não apresentam o ID do PCA, a data de publicação, o item e o identificador da futura contratação, esses dados não devem ser inventados. Caso o Compras.gov permita usar a alternativa simplificada, poderá ser incluído:  \n- 2.7. O objeto da contratação está previsto no Plano de Contratações Anual de 2026, conforme consta das informações básicas deste Termo de Referência.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 2,
+          "chunk_id": "506e9ddd6739d838b38afa20",
+          "document_id": 971,
+          "document_title": "03+-+termo_de_referencia_16set_final.pdf-print.pdf",
+          "text": "## 6.6. Da Fiscalização Setorial  \n6.6.1. A fiscalização setorial será desempenhada por militares ou servidores civis, preferencialmente, do quadro de pessoal permanente da Marinha do Brasil e, nos seus afastamentos e seus impedimentos legais, ao seu substituto, também designado em Portaria exercer as atribuições dos fiscais técnicos e administrativos.  \n6.6.2. A fiscalização setorial terá por objetivo realizar a fiscalização de contratos com empresas que prestarão os serviços em cidades mais afastadas da PNSPA, porém, que pertençam a sua área de abrangência, tendo por objetivo ranger tanto os aspectos técnicos quanto os administrativos, garantindo uma maior eficiência nos contratos executados em localidades mais distantes.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 3,
+          "chunk_id": "911dd9920bced4edffc5a000",
+          "document_id": 1418,
+          "document_title": "03+-+termo_de_referencia_16set_final.pdf-print.pdf",
+          "text": "## 6.6. Da Fiscalização Setorial  \n6.6.1. A fiscalização setorial será desempenhada por militares ou servidores civis, preferencialmente, do quadro de pessoal permanente da Marinha do Brasil e, nos seus afastamentos e seus impedimentos legais, ao seu substituto, também designado em Portaria exercer as atribuições dos fiscais técnicos e administrativos.  \n6.6.2. A fiscalização setorial terá por objetivo realizar a fiscalização de contratos com empresas que prestarão os serviços em cidades mais afastadas da PNSPA, porém, que pertençam a sua área de abrangência, tendo por objetivo ranger tanto os aspectos técnicos quanto os administrativos, garantindo uma maior eficiência nos contratos executados em localidades mais distantes.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 4,
+          "chunk_id": "a6da5b3699eb9467c9624188",
+          "document_id": 1045,
+          "document_title": "02 - Anexo A - Termo de Referencia.pdf",
+          "text": "## Fiscalização Técnica  \n7.13. Os fiscais técnicos do contrato, além de exercerem as atribuições previstas no art. 33, II, da IN SGD nº 94, de 2022, acompanhará a execução do contrato, para que sejam cumpridas todas as condições estabelecidas no contrato, de modo a assegurar os melhores resultados para a Administração. (Decreto nº 11.246, de 2022, art. 22, VI);  \n7.13.1. Os fiscais técnicos do contrato anotarão no histórico de gerenciamento do contrato todas as ocorrências relacionadas à execução do contrato em sua área de atuação, com a descrição do que for necessário para a regularização das faltas ou dos defeitos observados. (Lei nº 14.133, de 2021, art. 117, §1º, e Decreto nº 11.246, de 2022, art. 22, II);  \n7.13.2. Identificada qualquer inexatidão ou irregularidade, o fiscal técnico do contrato emitirá notificações para a correção da execução do contrato, determinando prazo para a correção. (Decreto nº 11.246, de 2022, art. 22, III);  \n7.13.3. Os fiscais técnicos do contrato informarão ao gestor do contato, em tempo hábil, a situação que demandar decisão ou adoção de medidas que ultrapassem sua competência, para que adote as medidas necessárias e saneadoras, se for o caso. (Decreto nº 11.246, de 2022, art. 22, IV).  \n7.13.4. No caso de ocorrências que possam inviabilizar a execução do contrato nas datas aprazadas, o fiscal técnico do contrato comunicará o fato imediatamente ao gestor do contrato. (Decreto nº 11.246, de 2022, art. 22, V).  \n7.13.5. Os fiscais técnicos do contrato comunicarão ao gestor do contrato, em tempo hábil, o término do contrato sob sua responsabilidade, com vistas à renovação tempestiva ou à prorrogação contratual (Decreto nº 11.246, de 2022, art. 22, VII).",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 5,
+          "chunk_id": "f5855bacb87dc9d757f13720",
+          "document_id": 1412,
+          "document_title": "58/2026.pdf",
+          "text": "## 3. DESCRIÇÃO DA SOLUÇÃO COMO UM TODO CONSIDERADO O CICLO DE VIDA DO OBJETO  \n- 3.1 Trata-se contratação de curso online sobre o sistema eSocial para duas pessoas.\n- 3.2 O curso deve conter exemplos de casos práticos, possibilitando que os alunos desenvolvam habilidades e competências específicas para as demandas do sistema eSocial no trabalho.\n- 3.3 O curso deve cumprir o seguinte conteúdo programático:  \nMódulo I - Introdução ao eSocial  \n- Visão geral do eSocial e suas funcionalidades\n- Legislação e normas relacionadas ao eSocial  \nMódulo II - Erros Comuns no eSocial  \n- Identificação dos principais erros cometidos no eSocial\n- Análises dos casos reais de erros na organização\n- Apresentar alguns erros de retorno do eSocial\n- Dirimir os erros das Unidades Pagadoras envolvidas  \nMódulo III - eSocial, Ambiente Web Service e Gerenciador Integrador Prática  \n- Acessar Sistema Gerenciador Integrador do SIGEPE e o portal Web Geral\n- Funcionalidades do Gerenciador Integrador do SIGEPE\n- Como utilizar o Gerenciador Integrador para otimizar o processo do eSocial\n- Apresentar todas as ferramentas que os sistemas dispõem  \n- Apresentar as ferramentas do Gerenciador Integrador eSocial e do Portal Web geral\n- Apresentar onde estão as informações da folha (abertura e encerramento)\n- Relacionar o Arquivo DDP do SIAPE com os totalizadores do eSocial  \nMódulo IV - Boas Práticas no eSocial  \n- Implementação de boas práticas para garantir a conformidade e eficiência no processo de eSocial\n- Treinamento e capacitação da equipe  \nMódulo V - Auditoria e Fiscalização  \n- Preparação para as auditorias e fiscalizações\n- Como lidar com as auditorias fiscais",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 6,
+          "chunk_id": "editais_normativo:decreto-48817-2023-gestao-fiscalizacao:7:p1",
+          "document_id": 1900,
+          "document_title": "Decreto RJ 48.817",
+          "text": "Art. 7º A designação dos gestores e dos fiscais será realizada em ato de autoridade\ncompetente específico para cada instrumento contratual, devidamente publicado no Diário\nOficial.\n§ 1º Para o exercício da função, os gestores e os fiscais deverão ser cientificados,\nexpressamente, da indicação e respectivas atribuições antes da formalização do ato de\ndesignação, firmando ciência das obrigações dispostas neste Decreto, através de documento\npróprio no respectivo processo administrativo ou declarar impedimento.\n§ 2º O encargo de gestor ou de fiscal de contratos não poderá ser recusado pelo agente\npúblico.\n§ 3º Na hipótese de deficiência ou de limitações técnicas que possam impedir o\ncumprimento diligente das atribuições, o agente público deverá comunicar o fato ao seu\nsuperior hierárquico que providenciará a qualificação prévia do servidor para o desempenho das\nsuas atribuições, conforme a natureza e a complexidade do objeto, ou designar outro servidor\ncom a qualificação requerida.\n§ 4º As eventuais necessidades de desenvolvimento de competências de agentes para\nfins de fiscalização e gestão contratual deverão ser evidenciadas no estudo técnico preliminar, e\ndeverão ser sanadas, se for o caso, previamente à celebração do contrato, conforme dispõe o\ninciso X do §1º do art. 18 da Lei nº 14.133, de 2021.\n§ 5º Nos casos em que houver dispensa legal de publicação do contrato também será\ndispensada a publicação do ato de designação de gestores e fiscais, que constará apenas do\nprocesso de contratação.\n§ 6º O princípio da segregação das funções veda a designação do mesmo agente público\npara atuação simultânea em funções mais suscetíveis a riscos, de modo a reduzir a\npossibilidade de ocultação de erros e de ocorrência de fraudes na contratação.\n§ 7º A aplicação do princípio da segregação de funções de que trata o parágrafo anterior:\nI - será avaliada na situação fática processual; e\nII - poderá ser ajustada, no caso concreto, em razão:\na) da consolidação das linhas de defesa; e\nb) de características do caso concreto tais como o valor e a complexidade do objeto da\ncontratação.\n§ 8º Ao designar gestores e fiscais, a autoridade pública deverá dar preferência à\nindicação de servidores efetivos da própria pasta ou, na sua impossibilidade, a servidor efetivo\ncedido, conforme os motivos registrados em processo.\n§ 9º Excepcionalmente, será possível a designação de agente público ocupante,\nexclusivamente, de cargo em comissão, mediante justificativa expressa no processo, que\ndeverá abranger, no mínimo, a demonstração detalhada da impossibilidade de designação de\nservidor efetivo.\n§ 10 A ausência de designação de que trata o caput deste artigo implicará,\nexcepcionalmente, a atribuição das obrigações previstas neste Decreto, em especial nos arts.\n22, 24, 25 e 26, à autoridade que autorizou a contratação.\n§ 11 A exceção prevista no parágrafo anterior deste artigo não poderá perdurar por mais\nde 60 dias, sob pena de responsabilização funcional.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 7,
+          "chunk_id": "editais_normativo:decreto-48817-2023-gestao-fiscalizacao:26:p1",
+          "document_id": 1900,
+          "document_title": "Decreto RJ 48.817",
+          "text": "Art. 26. Compete ao fiscal administrativo, além das atribuições previstas no art. 24 deste\nDecreto, especialmente:\nI - assegurar, ao longo de toda a execução do contrato de aquisição de bens ou prestação\nde serviços, o cumprimento da reserva de cargos prevista em lei para pessoa com deficiência,\npara reabilitado da Previdência Social ou para aprendiz, bem como as reservas de cargos\nprevistas em outras normas específicas.\nII - receber, conforme o caso, a documentação da empresa para fins de pagamento,\nencaminhando-a ao gestor, com as notas fiscais assinadas e atestadas e relatório de\nconformidade;",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 8,
+          "chunk_id": "99526642c2534ac92ca665dc",
+          "document_id": 1087,
+          "document_title": "EDITAL COMPLETO REMARCADO - PR 37-2026 - 13-10-2026.pdf",
+          "text": "## Das Atribuições Específicas da Fiscalização Administrativa  \n. O fiscal administrativo do contrato verificará a manutenção das condições de habilitação da Contratada, acompanhará os saldos de 6.18 empenho, a regularidade dos pagamentos, a validade das garantias contratuais, a correta aplicação de glosas financeiras e a formalização de apostilamentos e termos aditivos.  \n. No cumprimento de suas atribuições, o fiscal administrativo solicitará mensalmente à Contratada todos os documentos 6.19 comprobatórios pertinentes, incluindo, mas não se limitando a:  \n- I. Certidões de regularidade fiscal (Federal, Estadual, Municipal), FGTS e Trabalhista (CNDT);\n- II. Comprovantes de quitação de salários, recolhimento de encargos sociais e previdenciários dos profissionais alocados na execução do objeto;\n- III. Comprovações específicas ligadas à atividade (como o fornecimento regular de Equipamentos de Proteção Individual - EPIs e exames médicos periódicos de saúde ocupacional para o pessoal exposto a riscos biológicos e químicos na usina).  \n. Caso ocorra qualquer indício de descumprimento das obrigações contratuais, fiscais ou trabalhistas, o fiscal administrativo do 6.20 contrato atuará tempestivamente na solução do problema junto à Contratada, reportando formalmente ao gestor do contrato para a abertura de processo de aplicação de penalidades, caso a situação ultrapasse a sua competência direta.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 9,
+          "chunk_id": "eb8bb1623d857887f25a834a",
+          "document_id": 516,
+          "document_title": "10_Termo_de_Referencia_-_089-2026_assinado_assinado.pdf",
+          "text": "## Do Gestor do Contrato:  \n- Cabe ao Gestor do Contrato, como autoridade coordenadora do processo: 6.7.\n- Coordenar os atos de acompanhamento das entregas e monitorar o saldo remanescente da Ata de Registro de Preços gerenciada pela Base Naval 6.7.1. do Rio de Janeiro (BNRJ);\n- Auxiliar os fiscais técnicos nas decisões que ultrapassarem as competências diretas destes, adotando as medidas saneadoras necessárias junto à 6.7.2. empresa;\n- Tomar as devidas providências para a formalização de processo administrativo de responsabilização e aplicação de sanções contratuais em caso de 6.7.3. atrasos injustificados na entrega ou descumprimento dos prazos de garantia;\n- Encaminhar a documentação fiscal e o termo de recebimento definitivo devidamente instruídos ao setor de finanças para os procedimentos formais 6.7.4. de liquidação e pagamento.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 10,
+          "chunk_id": "6683926082e6610c21f0f225",
+          "document_id": 1280,
+          "document_title": "55/2026.pdf",
+          "text": "## 6.19. São atribuições do Gestor do Contrato:  \nI - acompanhar a execução global do contrato;  \nII - coordenar as atividades dos fiscais designados;  \nIII - analisar as ocorrências registradas durante a execução;  \nIV - adotar providências para aplicação de sanções, quando cabíveis;  \nV - autorizar, quando for o caso, as alterações contratuais legalmente admitidas;  \nVI - encaminhar a documentação necessária à liquidação e ao pagamento das despesas;  \nVII - elaborar relatório conclusivo da execução contratual ao término da vigência;  \nVIII - acompanhar eventual processo de prorrogação contratual, quando demonstrada sua vantajosidade para a Administração.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "edital_obrigacoes",
+      "question": "Quais obrigações o edital impõe ao fornecedor e ao órgão?",
+      "aspects": [
+        "obrigações do fornecedor",
+        "obrigações do órgão"
+      ],
+      "candidates": [
+        {
+          "rank_candidate": 1,
+          "chunk_id": "224b0dc0246cc3a971843ef3",
+          "document_id": 100,
+          "document_title": "08._TR_160322-000180-2026.pdf",
+          "text": "## Da não aplicação das regras relativas ao instrumento substitutivo ao contrato  \n1. Deixa-se de aplicar, a esta contratação, o conjunto de regras relativas ao instrumento substitutivo ao contrato, uma vez que a formalização da presente aquisição se dará, obrigatoriamente, por meio de Termo de Contrato, não sendo cabível a sua substituição por nota de empenho de despesa, carta-contrato, ordem de fornecimento ou outro\n2. instrumento equivalente. 2. Nos termos do art. 95, inciso I, da Lei nº 14.133, de 2021, o instrumento de contrato é obrigatório, sendo facultativa a sua substituição prevista no caput apenas nas hipóteses de compras com entrega imediata e integral dos bens e das quais não resultem obrigações futuras, inclusive quanto a assistência técnica, o que não corresponde ao caso concreto. 3. A presente contratação, conforme fundamentado no Estudo Técnico Preliminar nº 362/2026 (itens 4.12 e 10.5), envolve obrigações futuras relevantes que subsistem para além da entrega física dos bens, notadamente a garantia contratual mínima de 24 (vinte e quatro) meses, com manutenção preventiva e corretiva, substituição de componentes em caso de vício ou defeito, disponibilização de peças de reposição e prestação de assistência técnica, o que afasta a possibilidade de utilização do instrumento substitutivo e impõe a formalização por Termo de Contrato. 4. Ademais, a existência de obrigações que se estendem no tempo torna necessária a exigência de garantia da contratação, na forma dos arts. 96 e seguintes da Lei nº 14.133, de 2021, cuja exigibilidade pressupõe instrumento contratual próprio, reforçando a inadequação do instrumento substitutivo à presente contratação.\n5. Por tais razões, resta prejudicada, por inaplicabilidade, a disciplina relativa ao instrumento substitutivo ao contrato constante do Anexo I, aplicando-se integralmente as cláusulas próprias do Termo de Contrato.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 2,
+          "chunk_id": "47d2f385555a35d4bb3b6f83",
+          "document_id": 1561,
+          "document_title": "SRP-Pregao-Eletronico-035.26---Servicos-de-c...",
+          "text": "## CLÁUSULA DÉCIMA QUINTA: DAS OBRIGAÇÕES DO ÓRGÃO GERENCIADOR, ÓRGÃOS ADERENTES NA QUALIDADE DE CONTRATANTES  \nConstituem obrigações do ÓRGÃO GERENCIADOR e ÓRGÃOS ADERENTES, na qualidade de Contratantes:  \n- a) efetuar os pagamentos devidos ao Fornecedor, de acordo com as condições estabelecidas no Edital para Registro de Preços, Termo de Referência (anexo VIII do Edital), Proposta de Preços (anexo X do Edital) e Consolidação das Informações desta Ata de Registro de Preços (Anexo VI do edital).\n- b) entregar ao Fornecedor documentos, informações e demais elementos que possuir e pertinentes à execução do presente instrumento;\n- c) exercer a fiscalização da execução do objeto;\n- d) receber provisória e definitivamente o objeto, nas formas definidas no edital.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 3,
+          "chunk_id": "79675aa1a84da9ee5378c87c",
+          "document_id": 1486,
+          "document_title": "Pregao 202026.zip",
+          "text": "- 11.6. O órgão ou a entidade poderá aderir a item da ARP da qual seja integrante, na qualidade de não participante, para aqueles itens para os quais não tenha quantitativo registrado, observados os requisitos do item 11.2.\n- 11.7. O órgão gerenciador observará as seguintes regras de controle para a adesão à ARP:\n4. I - As aquisições adicionais não poderão exceder, por órgão ou entidade, a cinquenta por cento (50%) dos quantitativos dos itens do instrumento convocatório registrados na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e para os órgãos ou as entidades participantes;\n5. II - o quantitativo decorrente das adesões não poderá exceder, na totalidade, ao dobro do quantitativo de cada item registrado na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e os órgãos ou as entidades participantes, independentemente do número de órgãos ou entidades não participantes que aderirem à ARP.\n- 11.8. Compete ao órgão ou entidade não participante os atos relativos à cobrança do cumprimento pelo fornecedor das obrigações contratualmente assumidas e a aplicação, observados os princípios da ampla defesa e do contraditório, das penalidades decorrentes do descumprimento do pactuado na ARP, em relação à sua demanda, ou do descumprimento das obrigações contratuais, em relação às suas próprias contratações, informando as ocorrências à Administração Central ou ao Hospital Universitário, na condição de gerenciador.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 4,
+          "chunk_id": "64e921c4872cf2208f95c15e",
+          "document_id": 1395,
+          "document_title": "163/2026.pdf",
+          "text": "## Forma de seleção e critério de julgamento da proposta[A1]  \n- 9.1. O fornecedor será selecionado por meio de contratação direta com fundamento no art. , inciso I, da Lei nº 74 14.133, de 1º de abril de 2021, com base no seguinte fundamento: A contratação deverá ser efetivada por inexigibilidade de licitação, com base no art. 74, inciso I, da Lei nº 14.133/2021, tendo em vista a inviabilidade de competição decorrente do art. 8º, inciso VII, da Lei nº 11.652/08, que estabelece a competência da EBC para \"distribuir a publicidade legal dos órgãos e entidades da administração federal, à exceção daquela veiculada pelos órgãos oficiais da União\", combinado com o art. 9º, §3º, do Decreto nº 6.555/08, o qual impõe ao Poder Executivo Federal que a publicidade legal que não seja veiculada em diários oficiais será distribuída pela EBC, conforme Declaração de Exclusividade expedida pela EBC (SEI nº 5858731).",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 5,
+          "chunk_id": "81f4bc03eb9ad86710256c4d",
+          "document_id": 1586,
+          "document_title": "SEI_63960763_CONJUR___Edital_Pregao_Bens___RCC_3.0.zip",
+          "text": "- 11.5. Caberá à Administração Central ou ao Hospital Universitário, na condição de gerenciador, autorizar, excepcional e justificadamente, a prorrogação do prazo para efetivação da contratação, respeitado o prazo de vigência da ata, desde que solicitada pelo órgão ou entidade não participante.\n- 11.6. O órgão ou a entidade poderá aderir a item da ARP da qual seja integrante, na qualidade de não participante, para aqueles itens para os quais não tenha quantitativo registrado, observados os requisitos do item 11.2.\n- 11.7. O órgão gerenciador observará as seguintes regras de controle para a adesão à ARP:\n- I - As aquisições adicionais não poderão exceder, por órgão ou entidade, a cinquenta por cento (50%) dos quantitativos dos itens do instrumento convocatório registrados na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e para os órgãos ou as entidades participantes;\n- II - o quantitativo decorrente das adesões não poderá exceder, na totalidade, ao dobro do quantitativo de cada item registrado na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e os órgãos ou as entidades participantes, independentemente do número de órgãos ou entidades não participantes que aderirem à ARP.\n- 11.8. Compete ao órgão ou entidade não participante os atos relativos à cobrança do cumprimento pelo fornecedor das obrigações contratualmente assumidas e a aplicação, observados os princípios da ampla defesa e do contraditório, das penalidades decorrentes do descumprimento do pactuado na ARP, em relação à sua demanda, ou do descumprimento das obrigações contratuais, em relação às suas próprias contratações, informando as ocorrências à Administração Central ou ao Hospital Universitário, na condição de gerenciador.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 6,
+          "chunk_id": "f092dd334b9d57b6ccf09bbc",
+          "document_id": 1598,
+          "document_title": "Edital e anexos.zip",
+          "text": "- 11.5. Caberá à Administração Central ou ao Hospital Universitário, na condição de gerenciador, autorizar, excepcional e justificadamente, a prorrogação do prazo para efetivação da contratação, respeitado o prazo de vigência da ata, desde que solicitada pelo órgão ou entidade não participante.\n- 11.6. O órgão ou a entidade poderá aderir a item da ARP da qual seja integrante, na qualidade de não participante, para aqueles itens para os quais não tenha quantitativo registrado, observados os requisitos do item 11.2.\n- 11.7. O órgão gerenciador observará as seguintes regras de controle para a adesão à ARP:\n- I - As aquisições adicionais não poderão exceder, por órgão ou entidade, a cinquenta por cento (50%) dos quantitativos dos itens do instrumento convocatório registrados na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e para os órgãos ou as entidades participantes;\n- II - o quantitativo decorrente das adesões não poderá exceder, na totalidade, ao dobro do quantitativo de cada item registrado na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e os órgãos ou as entidades participantes, independentemente do número de órgãos ou entidades não participantes que aderirem à ARP.\n- 11.8. Compete ao órgão ou entidade não participante os atos relativos à cobrança do cumprimento pelo fornecedor das obrigações contratualmente assumidas e a aplicação, observados os princípios da ampla defesa e do contraditório, das penalidades decorrentes do descumprimento do pactuado na ARP, em relação à sua demanda, ou do descumprimento das obrigações contratuais, em relação às suas próprias contratações, informando as ocorrências à Administração Central ou ao Hospital Universitário, na condição de gerenciador.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 7,
+          "chunk_id": "8a6b870c96685d47f5f54155",
+          "document_id": 1604,
+          "document_title": "Edital e anexos.zip",
+          "text": "- 11.5. Caberá à Administração Central ou ao Hospital Universitário, na condição de gerenciador, autorizar, excepcional e justificadamente, a prorrogação do prazo para efetivação da contratação, respeitado o prazo de vigência da ata, desde que solicitada pelo órgão ou entidade não participante.\n- 11.6. O órgão ou a entidade poderá aderir a item da ARP da qual seja integrante, na qualidade de não participante, para aqueles itens para os quais não tenha quantitativo registrado, observados os requisitos do item 11.2.\n- 11.7. O órgão gerenciador observará as seguintes regras de controle para a adesão à ARP:\n- I - As aquisições adicionais não poderão exceder, por órgão ou entidade, a cinquenta por cento (50%) dos quantitativos dos itens do instrumento convocatório registrados na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e para os órgãos ou as entidades participantes;\n- II - o quantitativo decorrente das adesões não poderá exceder, na totalidade, ao dobro do quantitativo de cada item registrado na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e os órgãos ou as entidades participantes, independentemente do número de órgãos ou entidades não participantes que aderirem à ARP.\n- 11.8. Compete ao órgão ou entidade não participante os atos relativos à cobrança do cumprimento pelo fornecedor das obrigações contratualmente assumidas e a aplicação, observados os princípios da ampla defesa e do contraditório, das penalidades decorrentes do descumprimento do pactuado na ARP, em relação à sua demanda, ou do descumprimento das obrigações contratuais, em relação às suas próprias contratações, informando as ocorrências à Administração Central ou ao Hospital Universitário, na condição de gerenciador.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 8,
+          "chunk_id": "1a86734c4be2f2251e4562da",
+          "document_id": 1428,
+          "document_title": "SEI_63824421_CONJUR___Edital_Pregao_Bens___RCC_3.0.zip",
+          "text": "- 11.5. Caberá à Administração Central ou ao Hospital Universitário, na condição de gerenciador, autorizar, excepcional e justificadamente, a prorrogação do prazo para efetivação da contratação, respeitado o prazo de vigência da ata, desde que solicitada pelo órgão ou entidade não participante.\n- 11.6. O órgão ou a entidade poderá aderir a item da ARP da qual seja integrante, na qualidade de não participante, para aqueles itens para os quais não tenha quantitativo registrado, observados os requisitos do item 11.2.\n- 11.7. O órgão gerenciador observará as seguintes regras de controle para a adesão à ARP:\n6. I - As aquisições adicionais não poderão exceder, por órgão ou entidade, a cinquenta por cento (50%) dos quantitativos dos itens do instrumento convocatório registrados na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e para os órgãos ou as entidades participantes;\n7. II - o quantitativo decorrente das adesões não poderá exceder, na totalidade, ao dobro do quantitativo de cada item registrado na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e os órgãos ou as entidades participantes, independentemente do número de órgãos ou entidades não participantes que aderirem à ARP.\n- 11.8. Compete ao órgão ou entidade não participante os atos relativos à cobrança do cumprimento pelo fornecedor das obrigações contratualmente assumidas e a aplicação, observados os princípios da ampla defesa e do contraditório, das penalidades decorrentes do descumprimento do pactuado na ARP, em relação à sua demanda, ou do descumprimento das obrigações contratuais, em relação às suas próprias contratações, informando as ocorrências à Administração Central ou ao Hospital Universitário, na condição de gerenciador.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 9,
+          "chunk_id": "c504c95706a54c518741c86d",
+          "document_id": 1439,
+          "document_title": "Docs.zip",
+          "text": "- 11.5. Caberá à Administração Central ou ao Hospital Universitário, na condição de gerenciador, autorizar, excepcional e justificadamente, a prorrogação do prazo para efetivação da contratação, respeitado o prazo de vigência da ata, desde que solicitada pelo órgão ou entidade não participante.\n- 11.6. O órgão ou a entidade poderá aderir a item da ARP da qual seja integrante, na qualidade de não participante, para aqueles itens para os quais não tenha quantitativo registrado, observados os requisitos do item 11.2.\n- 11.7. O órgão gerenciador observará as seguintes regras de controle para a adesão à ARP:\n7. I - As aquisições adicionais não poderão exceder, por órgão ou entidade, a cinquenta por cento (50%) dos quantitativos dos itens do instrumento convocatório registrados na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e para os órgãos ou as entidades participantes;\n8. II - o quantitativo decorrente das adesões não poderá exceder, na totalidade, ao dobro do quantitativo de cada item registrado na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e os órgãos ou as entidades participantes, independentemente do número de órgãos ou entidades não participantes que aderirem à ARP.\n- 11.8. Compete ao órgão ou entidade não participante os atos relativos à cobrança do cumprimento pelo fornecedor das obrigações contratualmente assumidas e a aplicação, observados os princípios da ampla defesa e do contraditório, das penalidades decorrentes do descumprimento do pactuado na ARP, em relação à sua demanda, ou do descumprimento das obrigações contratuais, em relação às suas próprias contratações, informando as ocorrências à Administração Central ou ao Hospital Universitário, na condição de gerenciador.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 10,
+          "chunk_id": "4a198221e57db9e212941185",
+          "document_id": 1465,
+          "document_title": "PREGAO 41- Reedicao de Drenos, Tubos, Sondas e Seringa- Parte 2.zip",
+          "text": "- 11.5. Caberá à Administração Central ou ao Hospital Universitário, na condição de gerenciador, autorizar, excepcional e justificadamente, a prorrogação do prazo para efetivação da contratação, respeitado o prazo de vigência da ata, desde que solicitada pelo órgão ou entidade não participante.\n- 11.6. O órgão ou a entidade poderá aderir a item da ARP da qual seja integrante, na qualidade de não participante, para aqueles itens para os quais não tenha quantitativo registrado, observados os requisitos do item 11.2.\n- 11.7. O órgão gerenciador observará as seguintes regras de controle para a adesão à ARP:\n14. I - As aquisições adicionais não poderão exceder, por órgão ou entidade, a cinquenta por cento (50%) dos quantitativos dos itens do instrumento convocatório registrados na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e para os órgãos ou as entidades participantes;\n15. II - o quantitativo decorrente das adesões não poderá exceder, na totalidade, ao dobro do quantitativo de cada item registrado na ARP para a Administração Central ou do Hospital Universitário, na condição de gerenciador, e os órgãos ou as entidades participantes, independentemente do número de órgãos ou entidades não participantes que aderirem à ARP.\n- 11.8. Compete ao órgão ou entidade não participante os atos relativos à cobrança do cumprimento pelo fornecedor das obrigações contratualmente assumidas e a aplicação, observados os princípios da ampla defesa e do contraditório, das penalidades decorrentes do descumprimento do pactuado na ARP, em relação à sua demanda, ou do descumprimento das obrigações contratuais, em relação às suas próprias contratações, informando as ocorrências à Administração Central ou ao Hospital Universitário, na condição de gerenciador.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "contrato_clausulas",
+      "question": "Quais cláusulas do contrato tratam de prazo e pagamento?",
+      "aspects": [
+        "prazo",
+        "pagamento"
+      ],
+      "candidates": [
+        {
+          "rank_candidate": 1,
+          "chunk_id": "98438715e1a31038cc0c0031",
+          "document_id": 165,
+          "document_title": "TR NOVO.pdf",
+          "text": "## 7 - PENALIDADES  \nA quebra do sigilo e/ou da confidencialidade das INFORMAÇÕES, devidamente comprovada, possibilitará a imediata aplicação de penalidades previstas conforme disposições contratuais e legislações em vigor que tratam desse assunto, podendo até culminar na rescisão do CONTRATO PRINCIPAL firmado entre as PARTES. Neste caso, a CONTRATADA, estará sujeita, por ação ou omissão, ao pagamento ou recomposição de todas as perdas e danos sofridos pela CONTRATANTE, inclusive as de ordem moral, bem como as de responsabilidades civil e criminal, as quais serão apuradas em regular processo administrativo ou judicial, sem prejuízo das demais sanções legais cabíveis, conforme Art. 156 da Lei nº. 14.133/2021.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 2,
+          "chunk_id": "fa8e4c4d1f2609975bc95ceb",
+          "document_id": 1036,
+          "document_title": "Pregao 90251.2026 licitante.v2.pdf",
+          "text": "## 7 - PENALIDADES  \nA quebra do sigilo e/ou da confidencialidade das INFORMAÇÕES, devidamente comprovada, possibilitará a imediata aplicação de penalidades previstas conforme disposições contratuais e legislações em vigor que tratam desse assunto, podendo até culminar na rescisão do CONTRATO PRINCIPAL firmado entre as PARTES. Neste caso, a CONTRATADA, estará sujeita, por ação ou omissão, ao pagamento ou recomposição de todas as perdas e danos sofridos pela CONTRATANTE, inclusive as de ordem moral, bem como as de responsabilidades civil e criminal, as quais serão apuradas em regular processo administrativo ou judicial, sem prejuízo das demais sanções legais cabíveis, conforme previsto nos arts. 155 a 163 da Lei nº. 14.133, de 2021.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 3,
+          "chunk_id": "62ce825271cd6dbbb917baa0",
+          "document_id": 1194,
+          "document_title": "TR_anexos_218_2026_subscricao_redhat.pdf",
+          "text": "## 7 - PENALIDADES  \nA quebra do sigilo e/ou da confidencialidade das INFORMAÇÕES, devidamente comprovada, possibilitará a imediata aplicação de penalidades previstas conforme disposições contratuais e legislações em vigor que tratam desse assunto, podendo até culminar na rescisão do CONTRATO PRINCIPAL firmado entre as PARTES. Neste caso, a CONTRATADA, estará sujeita, por ação ou omissão, ao pagamento ou recomposição de todas as perdas e danos sofridos pela CONTRATANTE, inclusive as de ordem moral, bem como as de responsabilidades civil e criminal, as quais serão apuradas em regular processo administra)vo ou judicial, sem prejuízo das demais sanções legais cabíveis, conforme previsto nos arts. 155 a 163 da Lei nº 14.133, de 2021.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 4,
+          "chunk_id": "678a62f73bb6ddcd48f04290",
+          "document_id": 1687,
+          "document_title": "03. TR - Sistema de Videomonitoramento do CSB.pdf",
+          "text": "## 4.3. Garantia da Contratação:  \nPoderá ser exigida a garantia da contratação de que tratam os arts. 96 e seguintes da Lei nº 14.133, de 2021, no percentual e condições descritas nas cláusulas do contrato.  \nEm caso de opção pelo seguro-garantia, a parte adjudicatária deverá apresentá-la, no máximo, até a data de assinatura do contrato.  \nA garantia, nas modalidades caução e fiança bancária, deverá ser prestada em até 10 dias úteis após a assinatura do contrato.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 5,
+          "chunk_id": "b5d729402f763ce5344a44f3",
+          "document_id": 1325,
+          "document_title": "TR_731040-000067-2026-2_CMG_ESPIRITO_Prensa_assinar_assinado.pdf",
+          "text": "## Garantia da contratação  \n4.3. Será exigida a garantia da contratação de que tratam os arts. 96 e seguintes da Lei nº 14.133, de 2021, no percentual e condições descritas nas cláusulas do contrato.  \n4.4. Em caso de opção pelo seguro-garantia, a parte adjudicatária deverá apresentá-la, no máximo, até a data de assinatura do contrato.  \n- 4.5. A garantia, nas modalidades caução e fiança bancária, deverá ser prestada em até 10 dias úteis após assinatura do contrato.  \n4.6. O contrato oferece maior detalhamento das regras que serão aplicadas em relação à garantia da contratação.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 6,
+          "chunk_id": "9232a1d3c022c1c22734a18d",
+          "document_id": 1437,
+          "document_title": "EDITAL PE 195-2026.pdf",
+          "text": "## Da Garantia da Contratação  \n- 4.16. Será exigida a garantia da contratação de que tratam os arts. 96 e seguintes da Lei nº 14.133, de 2021, no percentual e condições descritas nas cláusulas do contrato.\n- 4.17. Em caso opção pelo seguro-garantia, a parte adjudicatária deverá apresentá-la, no máximo, até a data de assinatura do contrato.\n- 4.18. A garantia, nas modalidades caução e fiança bancária, deverá ser prestada em até 10 dias úteis após a assinatura do contrato.\n- 4.19. O contrato oferece maior detalhamento das regras que serão aplicadas em relação à garantia da contratação.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 7,
+          "chunk_id": "7170fed7ede21885d69b9640",
+          "document_id": 296,
+          "document_title": "ANEXO A - Termo de Referencia PNCG.pdf",
+          "text": "## GARANTIA DA CONTRATAÇÃO  \n4.13. Será exigida a garantia da contratação de que tratam os arts. 96 e seguintes da Lei nº 14.133, de 2021, no percentual e condições descritas nas cláusulas do contrato.  \nCâmara Nacional de Modelos de Licitações e Contratos da Consultoria-Geral da União  \nIdentidade visual pela Secretaria de Gestão e Inovação  \n4.14. Em caso opção pelo seguro-garantia, a parte adjudicatária terá prazo de um mês, contado da data de homologação da licitação, para sua apresentação, que deve ocorrer antes da assinatura do contrato. 4.15. A garantia, nas modalidades caução e fiança bancária, deverá ser prestada em até 15 (quinze) dias úteis após a assinatura do contrato. 4.16. O contrato ou outro instrumento hábil que o substitua oferece maior detalhamento das regras que serão aplicadas em relação à garantia da contratação.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 8,
+          "chunk_id": "e33c22e3c5511a281f65d535",
+          "document_id": 159,
+          "document_title": "TERMO DE REFERENCIA.pdf",
+          "text": "## Garantia da Contratação:  \n4.34. Será exigida a garantia da contratação de que tratam os arts. 96 e seguintes da Lei nº 14.133, de 2021, no percentual de 5% (cinco por cento) e nas condições descritas nas cláusulas do contrato.  \n- 4.34.1. Em caso de opção pelo seguro-garantia, a parte adjudicatária deverá apresentá-la, no máximo, até a data de assinatura do contrato.\n- 4.34.2. A garantia, nas modalidades caução e fiança bancária, deverá ser prestada em até 10 dias úteis após a assinatura do contrato.\n- 4.34.3. O contrato oferece maior detalhamento das regras que serão aplicadas em relação à garantia da contratação.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 9,
+          "chunk_id": "6616cad8852cc3e79fc3192c",
+          "document_id": 921,
+          "document_title": "TR_731040-000072-2026CMG_ESPIRITO_CT_DANIELA_assinar_assinado_assinado.pdf",
+          "text": "## Subcontratação  \n4.2. Não será admitida a subcontratação do objeto contratual.Garantia da contratação  \n- 4.3. Será exigida a garantia da contratação de que tratam os arts. 96 e seguintes da Lei nº 14.133, de 021, no percentual e condições descritas nas cláusulas do contrato.  \n4.4. Em caso de opção pelo seguro-garantia, a parte adjudicatária deverá apresentá-la, no máximo, até a data de assinatura do contrato.  \n- 4.5. A garantia, nas modalidades caução e fiança bancária, deverá ser prestada em até 10 dias úteis após assinatura do contrato.  \n4.6. O contrato oferece maior detalhamento das regras que serão aplicadas em relação à garantia da contratação.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 10,
+          "chunk_id": "160af5f833a223b599aecbd9",
+          "document_id": 1143,
+          "document_title": "pe 80 2026.zip",
+          "text": "## Subcontratação  \n- 4.2. Não será admitida a subcontratação do objeto contratual.Garantia da contratação\n- 4.3. Será exigida a garantia da contratação de que tratam os arts. 96 e seguintes da Lei nº 14.133, de 021, no percentual e condições descritas nas cláusulas do contrato.\n- 4.4. Em caso de opção pelo seguro-garantia, a parte adjudicatária deverá apresentá-la, no máximo, até a data de assinatura do contrato.\n- 4.5. A garantia, nas modalidades caução e fiança bancária, deverá ser prestada em até 10 dias úteis após assinatura do contrato.\n- 4.6. O contrato oferece maior detalhamento das regras que serão aplicadas em relação à garantia da contratação.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "pncp_publicacoes",
+      "question": "Quais documentos PNCP foram publicados em 2025?",
+      "aspects": [
+        "documentos publicados em 2025"
+      ],
+      "candidates": [
+        {
+          "rank_candidate": 1,
+          "chunk_id": "061d60cf6ec4c680d7466850",
+          "document_id": 1438,
+          "document_title": "EDITAL_PE_065.2026_PA_22813.25__AQ_DE_ELETROLARINGE",
+          "text": "## 15.12. DA PUBLICIZAÇÃO DOS CONTRATOS  \n- 15.12.1. A divulgação no Portal Nacional de Contratações Públicas (PNCP) é condição indispensável para a eficácia do contrato e de seus aditamentos e deverá ocorrer no prazo de 20 (vinte) dias úteis contados da data de sua assinatura, nos termos do art. 94, inciso I, da Lei N.º 14.133/2021.\n- 15.12.2. Os contratos celebrados em caso de urgência terão eficácia a partir de sua assinatura e deverão ser publicados no prazo estabelecido no subitem anterior, sob pena de nulidade.  \n| Folha nº    | P M I   |\n|-------------|---------|\n| PROCESSO Nº | VISTO   |\n| 22.813/2025 |         |  \n<!-- image -->",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 2,
+          "chunk_id": "fdf0579b38e7f2e0a9287f6a",
+          "document_id": 484,
+          "document_title": "01. Edital_216_03_2025_SIAD_HNMD.pdf",
+          "text": "## 14. DOS RECURSOS  \n\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_\\_  \n14.1. Dos atos da Administração Pública Federal referentes aos indeferimentos dos pedidos de credenciamento e demais procedimentos previstos neste Edital caberão recursos administrativos na forma e nos prazos previstos no art. 17 do Decreto nº 11.878, de 2024 e do art. 165, da Lei nº 14.133/2021. 14.1.1. O recurso será formalizado em processo administrativo, observado o devido processo legal, conforme art. 166 a 168 da Lei 14.133/2021. 14.1.2. O Recurso deverá ser Formulado à Comissão de Contratação do Edital nº 216-03/2025; e enviado por e-mail. 14.1.3. Todos os pedidos serão publicados no Portal Nacional de Contratações - PNCP e serão",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 3,
+          "chunk_id": "7b359d3422ca517a96e73628",
+          "document_id": 156,
+          "document_title": "Anexo I - Termo de Referencia.pdf",
+          "text": "## 2. FUNDAMENTAÇÃO E DESCRIÇÃO DA NECESSIDADE DA CONTRATAÇÃO  \n- 2.1 A aquisição dos itens especificados neste documento visa atender às demandas originárias da Seção de Ensino de Engenharia Mecânica deste Instituto.\n- 2.2 As demandas das Seções de Ensino foram levantadas e consolidadas na fase interna de contratação, com elaboração de Documentos de Formalização de Demanda, Estudos Técnicos Preliminares, Mapas de Risco e Pesquisas de Preços.\n- 2.3. A Fundamentação da Contratação e de seus quantitativos encontra-se pormenorizada em Tópico específico dos Estudos Técnicos Preliminares, apêndice deste Termo de Referência.\n- 2.4. O objeto da contratação está previsto no Plano de Contratações Anual 2026, conforme detalhamento a seguir:\n- I) ID PCA no PNCP: 00394452000103-0-000370/2026.\n6. II) Data de publicação no PNCP: 30/05/2025.\n7. III) Id dos itens no PCA:2741.\n8. IV) Classes/Grupos: 6695.\n- V) Identificador da Futura Contratação: 160327-108/2026.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 4,
+          "chunk_id": "7a6220fc79b620526f903267",
+          "document_id": 1798,
+          "document_title": "Termo de Referencia - Softwares.pdf",
+          "text": "## 11. ESTIMATIVAS DO VALOR DA CONTRATAÇÃO  \n- 11.1. O custo estimado total da contratação é de R$ 57.427,27 (cinquenta e sete mil, quatrocentos e vinte e sete reais e vinte e sete centavos), apurado por meio de pesquisa de preços realizada nos termos do art. 23 da Lei nº 14.133/2021 e da Instrução Normativa SEGES/ME nº 65/2021, com base em consulta aos preços praticados nas plataformas oficiais dos fabricantes, contratos similares publicados no Portal Nacional de Contratações Públicas (PNCP) e, para os Lotes 4 e 5, cotações obtidas junto a fornecedores especializados, cujos documentos encontram-se acostados aos autos do processo administrativo.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 5,
+          "chunk_id": "aa79130a6253146708cc3a5d",
+          "document_id": 495,
+          "document_title": "07 - EDITAL 39 2026 COMPLETO ASSINADO.pdf",
+          "text": "## 2. FUNDAMENTAÇÃO E DESCRIÇÃO DA NECESSIDADE DA CONTRATAÇÃO  \n- 2.1. A Fundamentação da Contratação e de seus quantitativos encontra-se pormenorizada em tópico específico dos Estudos Técnicos Preliminares, apêndice deste Termo de Referência.\n- 2.2. O objeto da contratação está previsto no Plano de Contratações Anual 2026, conforme detalhamento a seguir:  \nID PCA no PNCP: 00394502000144-0-00096/2026; Data de publicação no PNCP: 14/05/2025; Id do item no PCA: 1; Classe/Grupo: 2090; e Identificador da Futura Contratação: 771600-20/2026;  \n- 2.3. A presente contratação também encontra-se vinculada ao Plano Diretor de Logística Sustentável (PLS) da Marinha do Brasil, elaborado e atualizado em conformidade com o modelo instituído pela Portaria SEGES/ME nº5. 376, de 14 de setembro de 2023,atendendo ao disposto nos arts. 6º e 7º da Portaria SEGES/ME nº 8.678, de 16 de julho de 2021, que estabelecem o PLS como instrumento obrigatório de governança e de planejamento das contratações e da logística institucional. O PLS, enquanto instrumento vinculado ao planejamento estratégico e às leis orçamentárias, define objetivos, metas e ações voltadas à promoção da sustentabilidade nas dimensões , as quais foram econômica, ambiental e social consideradas na concepção desta contratação, em consonância com o art. 7º da Instrução Normativa SEGES/ME nº 58/2022 e com o inciso II do §1º do art. 8º da Portaria SEGES/ME nº 8.678 /2021.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 6,
+          "chunk_id": "fa437d9e7998fb954b19719a",
+          "document_id": 1080,
+          "document_title": "223/2026.pdf",
+          "text": "## 2. FUNDAMENTAÇÃO E DESCRIÇÃO DA NECESSIDADE DA CONTRATAÇÃO  \n- 2.1. A Fundamentação da Contratação e de seus quantitativos encontra-se pormenorizada em tópico específico dos , apêndice deste . Estudos Técnicos Preliminares Nº 76/2026 Termo de Referência\n- 2.2. Os materiais foram solicitados no . Cabe ressaltar que alguns dados ainda Plano Anual de Compras de 2026 não foram lançados por estar aguardando a aprovação da autoridade competente.\n3. Documento de Formalização da Demanda: 81/2026\n4. ID PCA no PNCP: 00394544000185-0-000030/2026\n5. Data de publicação no PNCP: 13/05/2025\n6. Id do item no PCA: 2507 a 2559\n7. Classe/Grupo: 6510 - MATERIAIS CIRÚRGICOS PARA CURATIVOS / 6515 - INSTRUMENTOS, EQUIPAMENTOS E SUPRIMENTOS MÉDICOS E CIRÚRGICOS / 6532 - VESTUÁRIO HOSPITALAR E CIRÚRGICO E ITENS CORRELATOS DE FINALIDADES ESPECIAIS / 7510 - ARTIGOS PARA ESCRITÓRIO\n8. Identificador da Futura Contratação: 250057-305/2026",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 7,
+          "chunk_id": "517d5eda67aa993e1f73b13b",
+          "document_id": 1140,
+          "document_title": "72/2026.pdf",
+          "text": "## 2. FUNDAMENTAÇÃO E DESCRIÇÃO DA NECESSIDADE DA CONTRATAÇÃO  \n2.1. A Fundamentação da Contratação e de seus quantitativos encontra-se pormenorizada em tópico específico dos  \nEstudos Técnicos Preliminares Nº 33/2026  \n, apêndice deste Termo de Referência  \n.  \n- 2.2. Os materiais serão inseridos no Plano Anual de Compras de . Cabe ressaltar que alguns dados ainda não 2026 foram lançados por estar aguardando a aprovação da autoridade competente.\n2. Documento de Formalização da Demanda: 41/2025\n3. ID PCA no PNCP: 00394544000185-0-000030/2026\n4. Data de publicação no PNCP: 13/05/2025\n5. Id do item no PCA: 3648 à 3664\n6. Classe/Grupo: 6515 - INSTRUMENTOS, EQUIPAMENTOS E SUPRIMENTOS MÉDICOS E CIRÚRGICOS; 6530 - MOBILIÁRIO, EQUIPAMENTOS, UTENSÍLIOS E SUPRIMENTOS HOSPITALARES;\n7. Identificador da Futura Contratação: 250057-93/2026  \nDocumento de Formalização da Demanda - DFD: 41/2025  \nID PCA no PNCP: 00394544000185-0-000030/2026  \nData de publicação no PNCP: 13/05/2025  \nId do item no PCA: 1078 à 1094  \nClasse/Grupo: 6515 - INSTRUMENTOS, EQUIPAMENTOS E SUPRIMENTOS MÉDICOS E CIRÚRGICOS; 6530 - MOBILIÁRIO, EQUIPAMENTOS, UTENSÍLIOS E SUPRIMENTOS HOSPITALARES;  \nIdentificador da Futura Contratação: 250057-93/2026  \n3. DESCRIÇÃO DA SOLUÇÃO COMO UM TODO CONSIDERADO O CICLO DE VIDA  \nDO OBJETO E ESPECIFICAÇÃO DO PRODUTO  \n3.1. A descrição da solução como um todo encontra-se pormenorizada em tópico específico dos Estudos Técnicos  \nPreliminares  \n, apêndice deste Termo de Referência.  \n4. REQUISITOS DA CONTRATAÇÃO  \n5 de 24",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 8,
+          "chunk_id": "editais_normativo:pncp_11867889000125_2025_48_arq1:15_2:p1",
+          "document_id": 1905,
+          "document_title": "EDITAL N°. 093/2025",
+          "text": "15- VIGÊNCIA DA ATA DE REGISTRO DE PREÇOS\n152\nPROCESSO Nº 5.375/2025\nESTADO DO RIO DE JANEIRO FLS.\nPrefeitura Municipal de Bom Jardim\n15.1- A Ata de Registro de Preços tem vigência de 01 (um) ano, contados a partir da data\nda sua assinatura, podendo ser prorrogado por igual período, nos termos permitidos no art.\n84 da Lei 14.133/2021.\n15.2- A prorrogação da vigência da Ata de Registro de Preços depende rá da concordância\ndas partes e de comprovação da vantajosidade dos preços.\n15.3- A prorrogação da vigência da Ata de Registro de Preços será registrada mediante\ntermo de prorrogação pactuado pelas partes nos autos de gestão da Ata de Registro de\nPreços\n15.4- A prorrogação da vigência da Ata de Registro de Preços deverá ser publicada e\ndivulgada.\n15.5 -A formalização da Ata de Registro de Preços, como também suas possíveis\nalterações, prorrogações, cancelamento e rescisões, serão publicados e divulgados no\nPNCP – Portal Nacional de Contratações Públicas, bem como, em forma de extrato, no\nDiário Eletrônico Municipal.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 9,
+          "chunk_id": "f4a0a0578a21042843395673",
+          "document_id": 7,
+          "document_title": "EDITAL_160313-000004-2026.zip",
+          "text": "## Análise de Casos Concretos no PNCP e Portais de Transparência  \n5.6. Uma análise de dados estatísticos de contratações recentes demonstra a variabilidade de preços e a abrangência dos objetos licitados:  \n5.6.1. Município de Cordeiro/RJ (Aviso de Contratação Direta nº 90042/2024): O referido processo teve por objeto a contratação de serviços de dedetização e higienização de reservatórios de água destinados à Secretaria Municipal de Educação. O valor estimado da contratação foi de R$ 53.717,80, contemplando a execução de 56 serviços de limpeza em caixas d'água de polietileno, incluindo reservatórios com capacidade de até 20.000 litros. Destaca-se que o Termo de Referência apresentou nível adequado de detalhamento técnico, incluindo, entre outros aspectos, a previsão de substituição de elementos filtrantes, como filtros de carvão ativado, evidenciando a preocupação da Administração com a manutenção da qualidade da água destinada ao consumo. As informações foram obtidas por meio de consulta ao Portal Nacional de Contratações Públicas (PNCP), disponível no endereço eletrônico: https://pncp.gov.br/app/editais/42498600000171/2024/6319.  \n5.6.2. Município de São Vicente/SP (Pregão 2309/2025): O referido certame teve por objeto a contratação de serviços de controle de pragas urbanas e desinfecção, com vigência de 12 meses, apresentando valor total estimado de R$ 93.500,00. Destaca-se, sob o aspecto técnico, a adoção de metodologias diferenciadas de aplicação, como o uso de gel inseticida em pontos estratégicos e a aplicação de produtos líquidos de baixo odor em áreas externas, ralos e locais sensíveis, com o objetivo de minimizar impactos operacionais e interferências nas atividades dos usuários dos ambientes atendidos. Tal abordagem evidencia a preocupação da Administração com a eficiência do serviço aliada à mitigação de riscos à saúde e ao conforto dos ocupantes, representando boa prática a ser considerada na definição dos requisitos técnicos da presente contratação. As informações foram obtidas por meio de consulta ao Portal Nacional de Contratações Públicas (PNCP), disponível no endereço eletrônico: https://pncp. gov.br/app/editais/46177523000109/2025/4.",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        },
+        {
+          "rank_candidate": 10,
+          "chunk_id": "81700ef5e0f72951cff021fa",
+          "document_id": 484,
+          "document_title": "01. Edital_216_03_2025_SIAD_HNMD.pdf",
+          "text": "## 15. DA IMPUGNAÇÃO DO EDITAL E DOS PEDIDOS DE INFORMAÇÕES  \n15.1. Qualquer cidadão é parte legítima para impugnar o presente Edital, após sua publicação no Portal Nacional de Contratações Públicas - PNCP. 15.2. Os pedidos de impugnação ou informações deverão ser Formulados à Seção de Credenciamentos e encaminhados para o endereço eletrônico juliana.barboza@emgepron.gov.br, com cópia (cc) para andrea.oppenheimer@marinha.mil.br. 15.3. Caberá ao Gestor do Contrato, auxiliado pelos responsáveis pela elaboração deste Edital e seus anexos, julgar e responder à impugnação no prazo de até 3 (três) dias úteis contados da data de recebimento da impugnação. 15.4. Todos os pedidos e respostas serão publicados no Portal Nacional de Contratações - PNCP e",
+          "proposed_label": "pending_review",
+          "aspect": null,
+          "review_status": "pending"
+        }
+      ]
+    }
+  ]
+}

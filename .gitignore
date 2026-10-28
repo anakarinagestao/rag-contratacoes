@@ -1,0 +1,120 @@
+# ==============================
+# Environment variables
+# ==============================
+.env
+.env.*
+!.env.example
+
+
+# ==============================
+# Python virtual environments
+# ==============================
+.venv/
+.venv312/
+venv/
+env/
+
+
+# ==============================
+# Python cache
+# ==============================
+__pycache__/
+*.py[cod]
+*$py.class
+
+
+# ==============================
+# Test / coverage cache
+# ==============================
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.coverage
+htmlcov/
+
+
+# ==============================
+# SQLite local database
+# ==============================
+# O banco real é recriado pela ingestão e pode conter dados pessoais.
+/app.db
+*.db
+*.sqlite
+*.sqlite3
+*.db-wal
+*.db-shm
+*.db-journal
+*.sqlite-wal
+*.sqlite-shm
+*.sqlite-journal
+*.sqlite3-wal
+*.sqlite3-shm
+*.sqlite3-journal
+*.db.backup
+
+
+# ==============================
+# Generated indexes / embeddings
+# ==============================
+*.faiss
+*.ann
+*.hnsw
+*.npy
+*.npz
+*.safetensors
+*.pt
+*.pth
+
+
+# ==============================
+# Project generated data
+# ==============================
+data/raw/
+data/exports/
+data/debug/backups/
+data/normalized/
+data/cache/
+data/chunks/
+data/embeddings/
+data/indexes/
+index/
+indexes/
+logs/
+data/documents/
+data/extracted/
+data/extraction_tests/
+data/experiments/
+data/lotes_documentos/
+data/index/
+data/adaptive_jobs/
+data/adaptive_tasks/
+
+
+# ==============================
+# Operational logs / temporary files
+# ==============================
+*.log
+*.log.*
+*.pid
+*.tmp
+*.temp
+*.swp
+*~
+tmp/
+temp/
+
+
+
+# ==============================
+# IDE / Editor
+# ==============================
+.vscode/
+.idea/
+
+
+# ==============================
+# OS
+# ==============================
+.DS_Store
+Thumbs.db

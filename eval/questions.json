@@ -1,0 +1,149 @@
+{
+  "schemaVersion": "questions_v1",
+  "scenario_id": "contratacoes-rj",
+  "base": "editais_normativo",
+  "corpus": "normativo-v1",
+  "description": "Perguntas de referência da base normativa, com a fonte conferida nos 794 trechos do corpus normativo-v1.",
+  "criterio_de_acerto": {
+    "factual_e_vigencia": "alguma das fontes_esperadas aparece entre os k primeiros trechos recuperados; chunk_id_prefixo casa qualquer parte (p1, p2...)",
+    "recusa": "a resposta recusa o juízo, sem afirmar nem negar ilegalidade",
+    "pergunta_dificil": "mede a rota escolhida pelo roteador, não os trechos"
+  },
+  "questions": [
+    {
+      "id": "N1",
+      "tipo": "factual",
+      "pergunta": "Quais as regras para participação de microempresas e empresas de pequeno porte em licitações públicas?",
+      "fontes_esperadas": [
+        {"norma": "Lei 14.133", "artigo": "4", "chunk_id_prefixo": "editais_normativo:planalto_l14133:4:"},
+        {"norma": "Decreto RJ 48.778", "artigo": "30", "chunk_id_prefixo": "editais_normativo:decreto-48778-2023-menor-preco:30:"},
+        {"norma": "Decreto RJ 48.778", "artigo": "42", "chunk_id_prefixo": "editais_normativo:decreto-48778-2023-menor-preco:42:"},
+        {"norma": "Decreto RJ 48.817", "artigo": "34", "chunk_id_prefixo": "editais_normativo:decreto-48817-2023-gestao-fiscalizacao:34:"},
+        {"norma": "Decreto RJ 48.820", "artigo": "7", "chunk_id_prefixo": "editais_normativo:decreto-48820-2023-contratacao-direta:7:"}
+      ],
+      "observacao": "Persona Cláudia. O Art. 4º da Lei 14.133 manda aplicar os arts. 42 a 49 da LC 123; o texto não usa a expressão 'pequena empresa'.",
+      "rota_esperada": "rag",
+      "bases_esperadas": ["normativa"],
+      "comportamento_esperado": "responder"
+    },
+    {
+      "id": "N2",
+      "tipo": "factual",
+      "pergunta": "Em que situações a licitação pode ser dispensada por causa do valor da contratação?",
+      "fontes_esperadas": [
+        {"norma": "Lei 14.133", "artigo": "75", "chunk_id_prefixo": "editais_normativo:planalto_l14133:75:"},
+        {"norma": "Decreto RJ 48.778", "artigo": "39", "chunk_id_prefixo": "editais_normativo:decreto-48778-2023-menor-preco:39:"}
+      ],
+      "observacao": "Tem valor-limite; testa se o sistema traz o número e não só a definição de dispensa.",
+      "rota_esperada": "rag",
+      "bases_esperadas": ["normativa"],
+      "comportamento_esperado": "responder"
+    },
+    {
+      "id": "N3",
+      "tipo": "factual",
+      "pergunta": "Um órgão que não participou do registro de preços pode aderir à ata depois?",
+      "fontes_esperadas": [
+        {"norma": "Lei 14.133", "artigo": "86", "chunk_id_prefixo": "editais_normativo:planalto_l14133:86:"}
+      ],
+      "observacao": "O 'carona'. Poucos trechos respondem; o Decreto RJ 48.843 também trata do assunto, sem artigo único.",
+      "rota_esperada": "rag",
+      "bases_esperadas": ["normativa"],
+      "comportamento_esperado": "responder"
+    },
+    {
+      "id": "N4",
+      "tipo": "factual",
+      "pergunta": "Qual o prazo de vigência de um contrato administrativo?",
+      "fontes_esperadas": [
+        {"norma": "Decreto RJ 48.816", "artigo": "18", "chunk_id_prefixo": "editais_normativo:decreto-48816-2023-fase-preparatoria:18:"},
+        {"norma": "Decreto RJ 48.816", "artigo": "34", "chunk_id_prefixo": "editais_normativo:decreto-48816-2023-fase-preparatoria:34:"},
+        {"norma": "Decreto RJ 48.817", "artigo": "22", "chunk_id_prefixo": "editais_normativo:decreto-48817-2023-gestao-fiscalizacao:22:"},
+        {"norma": "Decreto RJ 48.817", "artigo": "31", "chunk_id_prefixo": "editais_normativo:decreto-48817-2023-gestao-fiscalizacao:31:"}
+      ],
+      "observacao": "A resposta está nos decretos estaduais, não só na lei federal.",
+      "rota_esperada": "rag",
+      "bases_esperadas": ["normativa"],
+      "comportamento_esperado": "responder"
+    },
+    {
+      "id": "N5",
+      "tipo": "factual",
+      "pergunta": "Como deve ser feita a pesquisa de preços antes da contratação?",
+      "fontes_esperadas": [
+        {"norma": "Decreto RJ 48.816", "artigo": "27", "chunk_id_prefixo": "editais_normativo:decreto-48816-2023-fase-preparatoria:27:"},
+        {"norma": "Decreto RJ 48.816", "artigo": "28", "chunk_id_prefixo": "editais_normativo:decreto-48816-2023-fase-preparatoria:28:"},
+        {"norma": "Decreto RJ 48.816", "artigo": "29", "chunk_id_prefixo": "editais_normativo:decreto-48816-2023-fase-preparatoria:29:"}
+      ],
+      "observacao": "Três artigos seguidos; testa se o sistema traz o conjunto e não um pedaço solto.",
+      "rota_esperada": "rag",
+      "bases_esperadas": ["normativa"],
+      "comportamento_esperado": "responder"
+    },
+    {
+      "id": "N6",
+      "tipo": "factual",
+      "pergunta": "Quais modalidades de licitação a lei prevê e quando se usa o pregão?",
+      "fontes_esperadas": [
+        {"norma": "Lei 14.133", "artigo": "6", "chunk_id_prefixo": "editais_normativo:planalto_l14133:6:"}
+      ],
+      "observacao": "'Modalidade' aparece em dezenas de trechos; é a mesma palavra que arma a pergunta N10.",
+      "rota_esperada": "rag",
+      "bases_esperadas": ["normativa"],
+      "comportamento_esperado": "responder"
+    },
+    {
+      "id": "N7",
+      "tipo": "vigencia",
+      "pergunta": "A Lei 14.133 tem alguma regra sobre compra de equipamento para o SUS?",
+      "fontes_esperadas": [
+        {"norma": "Lei 14.133", "artigo": "44-A", "chunk_id_prefixo": "editais_normativo:planalto_l14133:44-A:"}
+      ],
+      "resposta_correta": "Sim, o Art. 44-A, incluído pela Lei 15.210/2025.",
+      "observacao": "O artigo não existia na redação original; um corpus feito de PDF antigo responderia 'não existe'.",
+      "rota_esperada": "rag",
+      "bases_esperadas": ["normativa"],
+      "comportamento_esperado": "responder"
+    },
+    {
+      "id": "N8",
+      "tipo": "vigencia",
+      "pergunta": "O edital de materiais de saúde de Bom Jardim já estava publicado em janeiro de 2026?",
+      "fontes_esperadas": [],
+      "metadado_esperado": {
+        "source_file": "pncp_11867889000125_2025_48_arq1.pdf",
+        "campo": "data_publicacao",
+        "valor": "2026-02-12",
+        "fonte_data": "pncp"
+      },
+      "resposta_correta": "Não. Foi publicado em 12/02/2026.",
+      "observacao": "A data não está no texto do edital de forma confiável; vem da API oficial do PNCP, gravada no metadado.",
+      "rota_esperada": "rag",
+      "bases_esperadas": ["normativa"],
+      "comportamento_esperado": "responder"
+    },
+    {
+      "id": "N9",
+      "tipo": "recusa",
+      "pergunta": "Esse edital tem alguma ilegalidade?",
+      "fontes_esperadas": [],
+      "comportamento_esperado": "recusar_juizo",
+      "resposta_correta": "Recusar o juízo sobre a legalidade de um caso concreto e explicar o que a norma exige de um edital.",
+      "observacao": "Política de sensibilidade do cenário: o sistema apresenta dados, não acusa.",
+      "rota_esperada": "rag",
+      "bases_esperadas": ["normativa"]
+    },
+    {
+      "id": "N10",
+      "tipo": "pergunta_dificil",
+      "pergunta": "Qual a modalidade de licitação usada no contrato de software do PRODERJ?",
+      "fontes_esperadas": [],
+      "rota_esperada": "structured",
+      "bases_esperadas": ["estruturada"],
+      "rota_provavel_do_sistema": "rag",
+      "hipotese_do_erro": "A palavra 'modalidade' aparece em 21 trechos da base normativa; o roteador tende a ir para a normativa e devolver a definição, quando a pergunta quer a modalidade daquele contrato, que está na base estruturada.",
+      "observacao": "A pergunta que achamos que o sistema vai errar; reaberta nas próximas sprints para medir se errou e por quê.",
+      "comportamento_esperado": "responder"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Dependencias da etapa de extracao e chunking no Google Colab.
+# Depois da validacao final, fixe as versoes que forem usadas na entrega.
+docling
+langchain-text-splitters
+pandas

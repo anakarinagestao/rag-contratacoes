@@ -1,0 +1,21 @@
+name: Repository governance
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  forbidden-artifacts:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check new and modified artifacts
+        run: >-
+          python3 scripts/check_repository_governance.py
+          --changed-from "${{ github.event.pull_request.base.sha }}"

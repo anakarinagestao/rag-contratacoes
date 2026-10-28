@@ -1,0 +1,23 @@
+[Unit]
+Description=Cobertura incremental de modalidades do PNCP/RJ
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=%h/Área de Trabalho/desafio-contratacoes/rag-grande-desafio-grupo03-contratacoes-publicas
+EnvironmentFile=%h/.config/pncp-incremental-coverage.env
+Environment=PYTHONDONTWRITEBYTECODE=1
+ExecStart=/usr/bin/python3 -m src.fetch_incremental_coverage --date ${PNCP_COVERAGE_DATE} --db-path ${PNCP_DB_PATH} --confirm-operational-database ${PNCP_DB_PATH} --log-path ${PNCP_LOG_PATH} --inter-shard-seconds 30 --execute
+Restart=on-failure
+RestartSec=1800
+TimeoutStartSec=infinity
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=read-only
+ReadWritePaths="%h/Área de Trabalho/desafio-contratacoes/rag-grande-desafio-grupo03-contratacoes-publicas/data/debug"
+ReadWritePaths="%h/Área de Trabalho/desafio-contratacoes/rag-grande-desafio-grupo03-contratacoes-publicas/logs"
+
+# A retomada é calculada pelo estado de cada membro. Membros COMPLETED são
+# ignorados e membros FAILED usam --resume internamente.
+# Não habilite no boot e use somente uma data de cobertura nova ou incompleta.

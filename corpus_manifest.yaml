@@ -1,0 +1,1141 @@
+scenario_id: contratacoes-rj
+version: "2026-09-16"              # data do congelamento do corpus
+description: "Contratações públicas do Estado do RJ, ano-base 2025"
+
+bases:
+
+  - base_id: contratos_estruturado
+    natureza: estruturada            # normativa | estruturada | conversacional | agregada
+    fonte: "PNCP - API de consulta v3"
+    acesso:
+      tipo: rest_api                 # rest_api | http_pdf | arquivo_local | sintetico
+      endpoint: "https://pncp.gov.br/api/consulta/v1/contratos"
+      documentacao: "https://pncp.gov.br/api/consulta/swagger-ui/index.html"
+      portal: "https://www.gov.br/pncp/pt-br"
+      consulta: "https://pncp.gov.br/app/contratos"
+      params:
+        dataInicial: "2025-01-01"
+        dataFinal: "2025-12-31"
+        uf: "RJ"
+      paginacao: { campo: "pagina", tamanho: 50 }
+      rate_limit_seg: 1.0
+    selecao_deterministica: true     # mesmo manifesto ⇒ mesmo corpus
+    criterio_selecao: "Contratos e contratações registrados no PNCP, com UF=RJ e período fechado de 01/01/2025 a 31/12/2025."
+    volume_alvo: 1200                # registros esperados; divergência grande = investigar
+    formato: json
+    licenca: "Dados abertos gov.br - atribuição"
+    sensitivity_default: publico     # publico | interno | restrito
+    campo_vigencia: "dataVigenciaFim"
+    chunking_sugerido: "1 contrato = 1 chunk, serializado em linguagem natural"
+    metadados_extras: [orgao, modalidade, valor, municipio, ano, numeroControlePNCP]
+
+
+  - base_id: editais_normativo
+    natureza: normativa
+    fonte: "Planalto (Lei 14.133/2021) + decretos estaduais RJ + editais de órgãos do RJ no PNCP"
+    acesso:
+      tipo: http_pdf                  # download por URL; a Lei 14.133 (Planalto) vem em HTML, os editais em PDF
+      urls:
+        - "https://www.planalto.gov.br/ccivil_03/_ato2019-2022/2021/lei/l14133.htm" #lei 14.133/2021, ler o arquivo como cp1252 para os acentos saírem certos
+        - "https://pncp.gov.br/pncp-api/v1/orgaos/42498600000171/compras/2025/926/arquivos/1" #equipamentos
+        - "https://pncp.gov.br/pncp-api/v1/orgaos/11867889000125/compras/2025/48/arquivos/1" #materiais de saúde
+        - "https://pncp.gov.br/pncp-api/v1/orgaos/42498600000171/compras/2025/4831/arquivos/9" #material de escritório
+        - "https://pncp.gov.br/pncp-api/v1/orgaos/42498600000171/compras/2025/6553/arquivos/1" #licenciamento de software
+        - "https://pncp.gov.br/pncp-api/v1/orgaos/42498600000171/compras/2025/921/arquivos/1" #medicamentos
+      rate_limit_seg: 2.0
+      # Decretos estaduais RJ: o site de origem bloqueia download automático (HTTP 403).
+      # Baixados manualmente no navegador (Ctrl+P > Salvar como PDF), com autorização do professor.
+      # Lista oficial: https://redelog.rj.gov.br/redelog/legislacao-licitacoes/
+      arquivos_locais:
+        pasta: "data/manual/editais_normativo/"
+        baixado_em: "2026-09-18"
+        arquivos:
+          - { arquivo: "decreto-48760-2023-pca.pdf", norma: "Decreto RJ 48.760/2023 - PCA", sha256: "66802a832cac73037c3859a9976ea738a36e88d67c7afae6d94511f9bdddd99d", origem: "https://leisestaduais.com.br/rj/decreto-n-48760-2023-rio-de-janeiro-implementa-o-plano-de-contratacoes-anual-pca-e-institui-o-sistema-pca-rj-no-ambito-da-administracao-publica-estadual-direta-autarquica-e-fundacional" }
+          - { arquivo: "decreto-49129-2024-altera-pca.pdf", norma: "Decreto RJ 49.129/2024 - altera o 48.760", sha256: "4f40867f0c0333496b5cd9288c7ba61603c08174654853ecafc82057f26a26fe", origem: "https://leisestaduais.com.br/rj/decreto-n-49129-2024-rio-de-janeiro-altera-o-decreto-no-48-760-de-23-de-outubro-de-2023-e-revoga-os-dispositivos-que-menciona" }
+          - { arquivo: "decreto-48778-2023-menor-preco.pdf", norma: "Decreto RJ 48.778/2023 - menor preço/maior desconto", sha256: "1dd02eac1ed65f243c7551bd501b955b541dfc8aca474fca07dfc96e7257f332", origem: "https://leisestaduais.com.br/rj/decreto-n-48778-2023-rio-de-janeiro-regulamenta-as-licitacoes-pelos-criterios-de-julgamento-por-menor-preco-ou-por-maior-desconto-no-ambito-da-administracao-publica-estadual-direta-autarquica-e-fundacional" }
+          - { arquivo: "decreto-48816-2023-fase-preparatoria.pdf", norma: "Decreto RJ 48.816/2023 - fase preparatória", sha256: "0aafdd4c0f0de58cdc0ac234336caf7331c053c09a242b31ceb86aab359bc02c", origem: "https://leisestaduais.com.br/rj/decreto-n-48816-2023-rio-de-janeiro-regulamenta-a-fase-preparatoria-das-contratacoes-de-que-trata-a-lei-no-14-133-de-1o-de-abril-de-2021-no-ambito-da-administracao-publica-estadual-direta-autarquica-e-fundacional" }
+          - { arquivo: "decreto-48817-2023-gestao-fiscalizacao.pdf", norma: "Decreto RJ 48.817/2023 - gestão e fiscalização", sha256: "afceff2fac64fa9a419faf5ace87580470203621b5ecf766618112143b38854f", origem: "https://leisestaduais.com.br/rj/decreto-n-48817-2023-rio-de-janeiro-regulamenta-a-gestao-e-a-fiscalizacao-das-contratacoes-no-ambito-da-administracao-publica-estadual-direta-autarquica-e-fundacional-e-da-outras-providencias" }
+          - { arquivo: "decreto-48820-2023-contratacao-direta.pdf", norma: "Decreto RJ 48.820/2023 - contratação direta", sha256: "b8fe3f78d3490bacc5b2ce273a44a1da0da784a3b93e8b3a726f86d8febc40d4", origem: "https://leisestaduais.com.br/rj/decreto-n-48820-2023-rio-de-janeiro-regulamenta-a-contratacao-direta-de-que-trata-a-lei-no-14-133-de-1o-de-abril-de-2021-no-ambito-da-administracao-publica-estadual-direta-autarquica-e-fundacional" }
+          - { arquivo: "decreto-48843-2023-registro-de-precos.pdf", norma: "Decreto RJ 48.843/2023 - registro de preços", sha256: "668ba5f4f42dc12fb2fca0959156b73fef495728e814456c56b451e34aaf0a44", origem: "https://leisestaduais.com.br/rj/decreto-n-48843-2023-rio-de-janeiro-regulamenta-o-sistema-de-registro-de-precos-srp-no-ambito-da-administracao-publica-estadual-direta-autarquica-e-fundacional-e-da-outras-providencias" }
+    selecao_deterministica: true      # lista fixa de URLs + sha256 no inventário
+    criterio_selecao: "Lei 14.133/2021, decretos estaduais e editais de licitação relacionados às contratações públicas do Estado do Rio de Janeiro, considerando o ano-base 2025."
+    volume_alvo: 13
+    formato: [pdf, html]
+    licenca: "Domínio público"
+    sensitivity_default: publico
+    campo_vigencia: "data_publicacao"
+    chunking_sugerido: "Split por artigo (lei/decretos) ou cláusula (editais); artigo longo é dividido em partes com overlap de 200 caracteres; preserva a hierarquia (Art., §, inciso). Sem overlap entre artigos: cada artigo é uma unidade fechada."
+    metadados_extras: [numero_norma, numero_edital, orgao, data_publicacao, fonte_data, ano, artigo, clausula, parte, tem_overlap, altera, dados_pessoais]
+
+
+  - base_id: atas_conversacional
+    natureza: conversacional
+    fonte: "PNCP + base sintética fornecida"
+    acesso:
+      tipo: sintetico
+      fontes:
+        - "https://pncp.gov.br/app/atas"
+        - "Base sintética fornecida no desafio"
+      documentacao: "https://pncp.gov.br/api/consulta/swagger-ui/index.html"
+      portal: "https://www.gov.br/pncp/pt-br"
+    selecao_deterministica: true
+    criterio_selecao: "Atas de registro de preços relacionadas às contratações públicas do Estado do Rio de Janeiro e trilhas de e-mails de compras presentes na base sintética fornecida no desafio."
+    volume_alvo: 20
+    formato: txt
+    licenca: "Dados públicos oficiais e base sintética fornecida no desafio"
+    sensitivity_default: publico
+    campo_vigencia: "data"
+    chunking_sugerido: "Split por mensagem ou evento, preservando a ordem temporal e o contexto"
+    metadados_extras: [tipo_documento, data, remetente, destinatario, assunto, processo, orgao, objeto]
+
+
+  - base_id: pca_agregada
+    natureza: agregada
+    fonte: "PNCP"
+    acesso:
+      tipo: rest_api
+      endpoint: "https://pncp.gov.br/api/consulta"
+      documentacao: "https://pncp.gov.br/api/consulta/swagger-ui/index.html"
+      portal: "https://www.gov.br/pncp/pt-br"
+      consulta_pca: "https://pncp.gov.br/app/pca"
+      params:
+        uf: "RJ"
+        ano: "2025"
+      paginacao: { campo: "pagina", tamanho: 50 }
+      rate_limit_seg: 1.0
+    selecao_deterministica: true
+    criterio_selecao: "Plano de Contratações Anual e valores homologados por item relacionados às contratações públicas do Estado do Rio de Janeiro, considerando o ano-base 2025."
+    volume_alvo: "A definir após a primeira coleta"
+    formato: json
+    licenca: "Dados abertos gov.br - atribuição"
+    sensitivity_default: publico
+    campo_vigencia: "ano"
+    chunking_sugerido: "1 item de planejamento ou item homologado = 1 unidade de recuperação"
+    metadados_extras: [orgao, cnpj_orgao, objeto, item, descricao_item, valor_estimado, valor_homologado, ano, ano_exercicio, numero_pca, numeroControlePNCP]
+
+sources:
+  - id: pncp_pca_rj
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: agregada
+    resource_type: pca
+    endpoint: /api/consulta/v1/pca/atualizacao
+    # O feed de atualização fragmenta os itens entre páginas. Ele serve
+    # somente para descobrir o plano; a RAW recebe o JSON do endpoint direto.
+    detail_endpoint_template: /api/pncp/v1/orgaos/{cnpj}/pca/{ano}/{sequencial}/itens/plano
+    params:
+      # A API de consulta do PCA exige os nomes abaixo e datas yyyyMMdd.
+      # O CNPJ limita a primeira carga a um recorte pequeno e reproduzível.
+      dataInicio: "20250401"
+      dataFim: "20250430"
+      cnpj: "42498733000148"
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 500
+      max_pages: 1
+    request:
+      timeout_seconds: 30
+      rate_limit_seconds: 0.2
+      max_retries: 3
+      retry_backoff_seconds: 0.5
+    item_path: data
+    key_fields:
+      - idPcaPncp
+
+  # PCA completo de 2023 para os órgãos encontrados nas contratações do RJ.
+  # A API de PCA não aceita UF; por isso os CNPJs são resolvidos da RAW
+  # estruturada e cada plano é buscado integralmente com todos os seus itens.
+  - id: pncp_pca_rj_2023
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: agregada
+    resource_type: pca
+    collector: pncp_pca_plans
+    endpoint: /api/pncp/v1/orgaos/{cnpj}/pca/{ano}/{sequencial}/itens/plano
+    discovery_endpoint_template: /api/pncp/v1/orgaos/{cnpj}/pca/{ano}/consolidado/unidades
+    params:
+      anoPca: 2023
+    audit_context:
+      source_id: pncp_pca_rj
+      ano_pca: 2023
+      recorte_orgaos: contratacoes_rj_2023_t1
+      tipo_execucao: completa
+    target_source_ids:
+      - pncp_contratacoes_rj_2023_t1_m01
+      - pncp_contratacoes_rj_2023_t1_m02
+      - pncp_contratacoes_rj_2023_t1_m03
+      - pncp_contratacoes_rj_2023_t1_m04
+      - pncp_contratacoes_rj_2023_t1_m05
+      - pncp_contratacoes_rj_2023_t1_m06
+      - pncp_contratacoes_rj_2023_t1_m07
+      - pncp_contratacoes_rj_2023_t1_m08
+      - pncp_contratacoes_rj_2023_t1_m09
+      - pncp_contratacoes_rj_2023_t1_m10
+      - pncp_contratacoes_rj_2023_t1_m11
+      - pncp_contratacoes_rj_2023_t1_m12
+      - pncp_contratacoes_rj_2023_t1_m13
+      - pncp_contratacoes_rj_2023_t1_m14
+    target_resource_type: contratacao
+    target_field_paths:
+      cnpj: orgaoEntidade.cnpj
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 0.5
+      max_retries: 5
+      retry_backoff_seconds: 2
+      max_concurrency: 8
+    key_fields:
+      - idPcaPncp
+
+  # Prova controlada da base estruturada. O período é fechado e a ampliação
+  # deve preservar a separação por modalidade exigida pela API de consulta.
+  - id: pncp_contratacoes_rj_piloto
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: paged
+    endpoint: /api/consulta/v1/contratacoes/atualizacao
+    params:
+      dataInicial: "20260128"
+      dataFinal: "20260128"
+      codigoModalidadeContratacao: 6
+      uf: RJ
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 10
+      max_pages: 1
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 0.2
+      max_retries: 3
+      retry_backoff_seconds: 0.5
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Smoke test isolado da coleta RAW de contratações publicadas no RJ.
+  # O ID inclui período, modalidade e finalidade para isolar o checkpoint.
+  - id: pncp_contratacoes_rj_2023_t1_m06_smoke
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 6
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: smoke
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 10
+      max_pages: 1
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 0.2
+      max_retries: 3
+      retry_backoff_seconds: 0.5
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa e paginada da modalidade 6 no primeiro trimestre de 2023.
+  # Esta fonte não reutiliza o checkpoint do smoke test.
+  - id: pncp_contratacoes_rj_2023_t1_m06
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 6
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa: modalidade 1 — Leilão - Eletrônico.
+  - id: pncp_contratacoes_rj_2023_t1_m01
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 1
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa: modalidade 2 — Diálogo Competitivo.
+  - id: pncp_contratacoes_rj_2023_t1_m02
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 2
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa: modalidade 3 — Concurso.
+  - id: pncp_contratacoes_rj_2023_t1_m03
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 3
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa: modalidade 4 — Concorrência - Eletrônica.
+  - id: pncp_contratacoes_rj_2023_t1_m04
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 4
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa: modalidade 5 — Concorrência - Presencial.
+  - id: pncp_contratacoes_rj_2023_t1_m05
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 5
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa: modalidade 7 — Pregão - Presencial.
+  - id: pncp_contratacoes_rj_2023_t1_m07
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 7
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa: modalidade 8 — Dispensa.
+  - id: pncp_contratacoes_rj_2023_t1_m08
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 8
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa: modalidade 9 — Inexigibilidade.
+  - id: pncp_contratacoes_rj_2023_t1_m09
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 9
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa: modalidade 10 — Manifestação de Interesse.
+  - id: pncp_contratacoes_rj_2023_t1_m10
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 10
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa: modalidade 11 — Pré-qualificação.
+  - id: pncp_contratacoes_rj_2023_t1_m11
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 11
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa: modalidade 12 — Credenciamento.
+  - id: pncp_contratacoes_rj_2023_t1_m12
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 12
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa: modalidade 13 — Leilão - Presencial.
+  - id: pncp_contratacoes_rj_2023_t1_m13
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 13
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Coleta completa: modalidade 14 — Inaplicabilidade da Licitação.
+  - id: pncp_contratacoes_rj_2023_t1_m14
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contracts
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+      codigoModalidadeContratacao: 14
+      uf: RJ
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano: 2023
+      trimestre: 1
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Itens das contratações estruturadas já persistidas. O JSON retornado
+  # pelo PNCP é preservado; a identidade externa inclui a contratação-pai.
+  - id: pncp_itens_contratacao_rj_piloto
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao_item
+    collector: pncp_purchase_items
+    endpoint: /api/pncp/v1/orgaos/{cnpj}/compras/{ano}/{sequencial}/itens
+    target_source_id: pncp_contratacoes_rj_piloto
+    target_resource_type: contratacao
+    target_field_paths:
+      cnpj: orgaoEntidade.cnpj
+      ano: anoCompra
+      sequencial: sequencialCompra
+      numero_controle: numeroControlePNCP
+    items_page_size: 50
+    pagination:
+      # Aqui uma "página" corresponde a uma contratação-alvo.
+      max_pages: 10
+    request:
+      timeout_seconds: 30
+      rate_limit_seconds: 0.2
+      max_retries: 3
+      retry_backoff_seconds: 0.5
+    key_fields:
+      - numeroItem
+
+  # Resultados dos itens já existentes na RAW. O coletor não consulta
+  # novamente a lista de itens e ignora localmente temResultado=false.
+  - id: pncp_resultado_item_piloto_rj
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: agregada
+    resource_type: resultado_item
+    collector: pncp_item_results
+    sensitivity: public_with_personal_data
+    endpoint: /api/pncp/v1/orgaos/{cnpj}/compras/{ano}/{sequencial}/itens/{numeroItem}/resultados
+    target_source_id: pncp_itens_contratacao_rj_piloto
+    target_resource_type: contratacao_item
+    target_field_paths:
+      numero_controle: "@parent_external_id"
+      numero_item: numeroItem
+      tem_resultado: temResultado
+    request:
+      timeout_seconds: 30
+      rate_limit_seconds: 0.2
+      max_retries: 3
+      retry_backoff_seconds: 0.5
+    key_fields:
+      - numeroControlePNCPCompra
+      - numeroItem
+      - sequencialResultado
+
+  # Coleta completa dos itens das 2.024 contratações do RJ publicadas no
+  # primeiro trimestre de 2023. Cada alvo corresponde a uma contratação RAW.
+  - id: pncp_itens_contratacao_rj_2023_t1
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao_item
+    collector: pncp_purchase_items
+    endpoint: /api/pncp/v1/orgaos/{cnpj}/compras/{ano}/{sequencial}/itens
+    target_source_ids:
+      - pncp_contratacoes_rj_2023_t1_m01
+      - pncp_contratacoes_rj_2023_t1_m02
+      - pncp_contratacoes_rj_2023_t1_m03
+      - pncp_contratacoes_rj_2023_t1_m04
+      - pncp_contratacoes_rj_2023_t1_m05
+      - pncp_contratacoes_rj_2023_t1_m06
+      - pncp_contratacoes_rj_2023_t1_m07
+      - pncp_contratacoes_rj_2023_t1_m08
+      - pncp_contratacoes_rj_2023_t1_m09
+      - pncp_contratacoes_rj_2023_t1_m10
+      - pncp_contratacoes_rj_2023_t1_m11
+      - pncp_contratacoes_rj_2023_t1_m12
+      - pncp_contratacoes_rj_2023_t1_m13
+      - pncp_contratacoes_rj_2023_t1_m14
+    target_resource_type: contratacao
+    target_field_paths:
+      cnpj: orgaoEntidade.cnpj
+      ano: anoCompra
+      sequencial: sequencialCompra
+      numero_controle: numeroControlePNCP
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano_publicacao: 2023
+      trimestre_publicacao: 1
+      uf: RJ
+      tipo_execucao: completa
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 0.5
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+      max_concurrency: 16
+    key_fields:
+      - numeroItem
+
+  # Coleta completa dos resultados homologados. Os alvos são derivados
+  # exclusivamente dos itens já preservados na RAW; temResultado=false não
+  # gera chamada à API, mas avança o checkpoint do alvo.
+  - id: pncp_resultado_item_rj_2023_t1
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: agregada
+    resource_type: resultado_item
+    collector: pncp_item_results
+    sensitivity: public_with_personal_data
+    endpoint: /api/pncp/v1/orgaos/{cnpj}/compras/{ano}/{sequencial}/itens/{numeroItem}/resultados
+    target_source_id: pncp_itens_contratacao_rj_2023_t1
+    target_resource_type: contratacao_item
+    target_field_paths:
+      numero_controle: "@parent_external_id"
+      numero_item: numeroItem
+      tem_resultado: temResultado
+    audit_context:
+      source_id: pncp_contratacoes_rj
+      ano_publicacao: 2023
+      trimestre_publicacao: 1
+      uf: RJ
+      tipo_execucao: completa
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 0.5
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+      max_concurrency: 32
+    key_fields:
+      - numeroControlePNCPCompra
+      - numeroItem
+      - sequencialResultado
+
+  # Contratos publicados no primeiro trimestre de 2023 pelas unidades do RJ
+  # identificadas nas contratações RAW. A consulta por CNPJ + unidade evita
+  # incorporar contratos de unidades do mesmo órgão localizadas em outra UF.
+  - id: pncp_contratos_rj_2023_t1
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contrato
+    collector: pncp_published_contracts
+    sensitivity: public_with_personal_data
+    endpoint: /api/consulta/v1/contratos
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20230331"
+    audit_context:
+      source_id: pncp_contratos_rj
+      ano_publicacao: 2023
+      trimestre_publicacao: 1
+      uf: RJ
+      tipo_execucao: completa
+    target_source_ids:
+      - pncp_contratacoes_rj_2023_t1_m01
+      - pncp_contratacoes_rj_2023_t1_m02
+      - pncp_contratacoes_rj_2023_t1_m03
+      - pncp_contratacoes_rj_2023_t1_m04
+      - pncp_contratacoes_rj_2023_t1_m05
+      - pncp_contratacoes_rj_2023_t1_m06
+      - pncp_contratacoes_rj_2023_t1_m07
+      - pncp_contratacoes_rj_2023_t1_m08
+      - pncp_contratacoes_rj_2023_t1_m09
+      - pncp_contratacoes_rj_2023_t1_m10
+      - pncp_contratacoes_rj_2023_t1_m11
+      - pncp_contratacoes_rj_2023_t1_m12
+      - pncp_contratacoes_rj_2023_t1_m13
+      - pncp_contratacoes_rj_2023_t1_m14
+    target_resource_type: contratacao
+    target_field_paths:
+      cnpj: orgaoEntidade.cnpj
+      codigo_unidade: unidadeOrgao.codigoUnidade
+      uf: unidadeOrgao.ufSigla
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+      max_concurrency: 1
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Empenhos vinculados a cada contrato preservado na RAW. HTTP 404 do
+  # endpoint de um contrato significa ausência de empenhos e avança o alvo.
+  - id: pncp_empenhos_contratos_rj_2023_t1
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: empenho
+    collector: pncp_commitments
+    sensitivity: public_with_personal_data
+    endpoint: /api/pncp/v1/orgaos/{cnpj}/contratos/{ano}/{sequencial}/empenhos
+    target_source_id: pncp_contratos_rj_2023_t1
+    target_resource_type: contrato
+    target_field_paths:
+      numero_controle: "@external_id"
+    audit_context:
+      source_id: pncp_contratos_rj
+      ano_publicacao: 2023
+      trimestre_publicacao: 1
+      uf: RJ
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 0.5
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+      max_concurrency: 32
+    item_path: data
+    key_fields:
+      - cnpj
+      - ano
+      - sequencialContrato
+      - sequencialEmpenho
+
+  # Atas de Registro de Preços vigentes desde 2023 nas unidades do RJ já
+  # identificadas nas contratações RAW. O coletor divide automaticamente o
+  # intervalo em anos porque a API do PNCP limita cada consulta a 365 dias.
+  - id: pncp_atas_rj_desde_2023
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: conversacional
+    resource_type: ata_registro_preco
+    collector: pncp_price_registry
+    sensitivity: public_with_personal_data
+    endpoint: /api/consulta/v1/atas
+    params:
+      dataInicial: "20230101"
+      dataFinal: "20260926"
+    audit_context:
+      source_id: pncp_atas_rj
+      criterio_temporal: vigencia
+      periodo_inicial: "2023-01-01"
+      periodo_final: "2026-09-26"
+      uf: RJ
+      tipo_execucao: completa
+    target_source_ids:
+      - pncp_contratacoes_rj_2023_t1_m01
+      - pncp_contratacoes_rj_2023_t1_m02
+      - pncp_contratacoes_rj_2023_t1_m03
+      - pncp_contratacoes_rj_2023_t1_m04
+      - pncp_contratacoes_rj_2023_t1_m05
+      - pncp_contratacoes_rj_2023_t1_m06
+      - pncp_contratacoes_rj_2023_t1_m07
+      - pncp_contratacoes_rj_2023_t1_m08
+      - pncp_contratacoes_rj_2023_t1_m09
+      - pncp_contratacoes_rj_2023_t1_m10
+      - pncp_contratacoes_rj_2023_t1_m11
+      - pncp_contratacoes_rj_2023_t1_m12
+      - pncp_contratacoes_rj_2023_t1_m13
+      - pncp_contratacoes_rj_2023_t1_m14
+    target_resource_type: contratacao
+    target_field_paths:
+      cnpj: orgaoEntidade.cnpj
+      codigo_unidade: unidadeOrgao.codigoUnidade
+      uf: unidadeOrgao.ufSigla
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 500
+    request:
+      timeout_seconds: 60
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+      max_concurrency: 1
+    item_path: data
+    key_fields:
+      - numeroControlePNCPAta
+
+  # Contratações publicadas no RJ do segundo trimestre de 2023 até hoje.
+  # O coletor expande o período em 14 trimestres e consulta as 14 modalidades,
+  # mantendo checkpoint por combinação trimestre/modalidade (196 alvos).
+  - id: pncp_contratacoes_rj_2023_t2_ate_hoje
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao
+    collector: pncp_contract_timeline
+    endpoint: /api/consulta/v1/contratacoes/publicacao
+    params:
+      dataInicial: "20230401"
+      dataFinal: "20260926"
+      uf: RJ
+      modalidades: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14]
+    audit_context:
+      source_id: pncp_contratacoes_rj_historico
+      criterio_temporal: publicacao
+      periodo_inicial: "2023-04-01"
+      periodo_final: "2026-09-26"
+      uf: RJ
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+      max_concurrency: 1
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Itens de todas as contratações do RJ publicadas entre o segundo
+  # trimestre de 2023 e o corte da coleta histórica. Cada alvo é resolvido
+  # diretamente da última versão da contratação preservada na RAW.
+  - id: pncp_itens_contratacao_rj_2023_t2_ate_hoje
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contratacao_item
+    collector: pncp_purchase_items
+    endpoint: /api/pncp/v1/orgaos/{cnpj}/compras/{ano}/{sequencial}/itens
+    target_source_id: pncp_contratacoes_rj_2023_t2_ate_hoje
+    target_resource_type: contratacao
+    target_field_paths:
+      cnpj: orgaoEntidade.cnpj
+      ano: anoCompra
+      sequencial: sequencialCompra
+      numero_controle: numeroControlePNCP
+    audit_context:
+      source_id: pncp_contratacoes_rj_historico
+      periodo_publicacao_inicial: "2023-04-01"
+      periodo_publicacao_final: "2026-09-26"
+      uf: RJ
+      tipo_execucao: completa
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 0.5
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+      max_concurrency: 16
+    key_fields:
+      - numeroItem
+
+  # Resultados homologados dos itens das contratações do RJ publicadas
+  # entre 01/04/2023 e o corte da coleta histórica. Itens marcados com
+  # temResultado=false avançam o checkpoint sem chamada à API.
+  - id: pncp_resultado_item_rj_2023_t2_ate_hoje
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: agregada
+    resource_type: resultado_item
+    collector: pncp_item_results
+    sensitivity: public_with_personal_data
+    endpoint: /api/pncp/v1/orgaos/{cnpj}/compras/{ano}/{sequencial}/itens/{numeroItem}/resultados
+    target_source_id: pncp_itens_contratacao_rj_2023_t2_ate_hoje
+    target_resource_type: contratacao_item
+    target_field_paths:
+      numero_controle: "@parent_external_id"
+      numero_item: numeroItem
+      tem_resultado: temResultado
+    audit_context:
+      source_id: pncp_contratacoes_rj_historico
+      periodo_publicacao_inicial: "2023-04-01"
+      periodo_publicacao_final: "2026-09-26"
+      uf: RJ
+      tipo_execucao: completa
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 0.5
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+      max_concurrency: 16
+    key_fields:
+      - numeroControlePNCPCompra
+      - numeroItem
+      - sequencialResultado
+
+  # Contratos publicados no segundo trimestre de 2023 pelas unidades do RJ
+  # identificadas nas contratações RAW do período histórico.
+  - id: pncp_contratacoes_rj_2023_t2
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: contrato
+    collector: pncp_published_contracts
+    sensitivity: public_with_personal_data
+    endpoint: /api/consulta/v1/contratos
+    params:
+      dataInicial: "20230401"
+      dataFinal: "20230630"
+    audit_context:
+      source_id: pncp_contratos_rj
+      ano_publicacao: 2023
+      trimestre_publicacao: 2
+      uf: RJ
+      tipo_execucao: completa
+    target_source_id: pncp_contratacoes_rj_2023_t2_ate_hoje
+    target_resource_type: contratacao
+    target_field_paths:
+      cnpj: orgaoEntidade.cnpj
+      codigo_unidade: unidadeOrgao.codigoUnidade
+      uf: unidadeOrgao.ufSigla
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 2.0
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+      max_concurrency: 1
+    item_path: data
+    key_fields:
+      - numeroControlePNCP
+
+  # Empenhos vinculados aos contratos publicados no segundo trimestre de 2023.
+  - id: pncp_empenhos_contratos_rj_2023_t2
+    base: https://pncp.gov.br
+    base_id: pncp
+    natureza: estruturada
+    resource_type: empenho
+    collector: pncp_commitments
+    sensitivity: public_with_personal_data
+    endpoint: /api/pncp/v1/orgaos/{cnpj}/contratos/{ano}/{sequencial}/empenhos
+    target_source_id: pncp_contratacoes_rj_2023_t2
+    target_resource_type: contrato
+    target_field_paths:
+      numero_controle: "@external_id"
+    audit_context:
+      source_id: pncp_contratos_rj
+      ano_publicacao: 2023
+      trimestre_publicacao: 2
+      uf: RJ
+      tipo_execucao: completa
+    pagination:
+      page_param: pagina
+      page_size_param: tamanhoPagina
+      page_size: 50
+    request:
+      timeout_seconds: 45
+      rate_limit_seconds: 0.5
+      max_retries: 5
+      retry_backoff_seconds: 2.0
+      max_concurrency: 32
+    item_path: data
+    key_fields:
+      - cnpj
+      - ano
+      - sequencialContrato
+      - sequencialEmpenho

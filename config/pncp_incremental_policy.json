@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "status": "pilot_baseline",
+  "window_policy": {
+    "max_window_days": 1,
+    "overlap_days": 2
+  },
+  "reconciliation": {
+    "contratacao_item": {
+      "cadence_days": 1,
+      "horizon_days": 365
+    },
+    "empenho": {
+      "cadence_days": 7,
+      "horizon_days": 730
+    },
+    "resultado_item": {
+      "cadence_days": 1,
+      "horizon_days": 365
+    }
+  },
+  "review": {
+    "decision": "approved_for_controlled_pilot",
+    "not_an_api_sla": true,
+    "reassess_after_days": 30
+  }
+}

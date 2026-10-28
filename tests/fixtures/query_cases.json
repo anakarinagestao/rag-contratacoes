@@ -1,0 +1,167 @@
+{
+  "schemaVersion": "query_cases_v1",
+  "description": "Casos determinísticos para validar a normalização do plano de consulta sem depender da Ecoa, do PNCP ou do banco.",
+  "cases": [
+    {
+      "id": "structured_modalidade_2026",
+      "question": "Quantas contratações por modalidade existem em 2026?",
+      "simulated_llm_output": {
+        "route": "structured",
+        "intent": "aggregate",
+        "entity": "contratacao",
+        "bases": ["estruturada"],
+        "filters": {"ano": 2026},
+        "operations": ["count"],
+        "aggregation_field": null,
+        "group_by": ["modalidade"],
+        "order_by": [],
+        "limit": null,
+        "semantic_query": null,
+        "needs_document_retrieval": false
+      },
+      "expected": {
+        "route": "structured",
+        "entity": "contratacao",
+        "bases": ["estruturada"],
+        "operations_contains": ["count", "group_by"],
+        "filters": {"ano": 2026}
+      },
+      "note": "Regressão: o modelo devolvia group_by sem a operação group_by."
+    },
+    {
+      "id": "structured_maior_valor",
+      "question": "Liste as 10 contratações de 2026 com maior valor estimado.",
+      "simulated_llm_output": {
+        "route": "structured",
+        "intent": "lookup",
+        "entity": "contratacao",
+        "bases": ["estruturada"],
+        "filters": {"ano": 2026},
+        "operations": ["list"],
+        "aggregation_field": null,
+        "group_by": [],
+        "order_by": [{"field": "valor_estimado", "direction": "desc"}],
+        "limit": 10,
+        "semantic_query": null,
+        "needs_document_retrieval": false
+      },
+      "expected": {
+        "route": "structured",
+        "entity": "contratacao",
+        "bases": ["estruturada"],
+        "operations_contains": ["list", "order_by"],
+        "filters": {"ano": 2026}
+      },
+      "note": "Regressão: o modelo devolvia ordenação sem a operação order_by."
+    },
+    {
+      "id": "rag_edital_manutencao_pncp",
+      "question": "No edital da contratação 00394502000144-1-009055/2026, quais serviços de manutenção dos elevadores estão previstos?",
+      "simulated_llm_output": {
+        "route": "rag",
+        "intent": "documental",
+        "entity": "contratacao",
+        "bases": ["agregada"],
+        "filters": {
+          "numero_controle_pncp": "00394502000144-1-009055/2026",
+          "objeto": "manutenção dos elevadores"
+        },
+        "operations": ["count", "group_by"],
+        "aggregation_field": null,
+        "group_by": ["modalidade"],
+        "order_by": [],
+        "limit": null,
+        "semantic_query": "serviços de manutenção dos elevadores",
+        "needs_document_retrieval": true
+      },
+      "expected": {
+        "route": "rag",
+        "entity": "contratacao",
+        "bases": ["agregada"],
+        "operations_equals": [],
+        "filters": {
+          "numero_controle_pncp": "00394502000144-1-009055/2026",
+          "objeto": null
+        }
+      },
+      "note": "Regressão: rota documental recebia operações estruturadas e filtro textual excessivamente restritivo."
+    },
+    {
+      "id": "hybrid_valor_equipamento_pncp",
+      "question": "Para a contratação 00394452000103-1-015448/2026, informe a modalidade e o valor estimado e, com base no Termo de Referência, diga qual equipamento será adquirido.",
+      "simulated_llm_output": {
+        "route": "rag",
+        "intent": "lookup",
+        "entity": "contrato",
+        "bases": ["agregada"],
+        "filters": {"numero_controle_pncp": "00394452000103-1-015448/2026"},
+        "operations": ["lookup", "list"],
+        "aggregation_field": "valor_estimado",
+        "group_by": [],
+        "order_by": [],
+        "limit": null,
+        "semantic_query": "qual equipamento será adquirido",
+        "needs_document_retrieval": true
+      },
+      "expected": {
+        "route": "hybrid",
+        "entity": "contratacao",
+        "bases_contains": ["estruturada", "agregada"],
+        "operations_equals": ["list"],
+        "filters": {"numero_controle_pncp": "00394452000103-1-015448/2026"}
+      },
+      "note": "Pergunta híbrida: valor/modalidade no SQLite e equipamento no documento."
+    },
+    {
+      "id": "rag_normativa_habilitacao",
+      "question": "Quais documentos são exigidos na fase de habilitação segundo a Lei nº 14.133/2021?",
+      "simulated_llm_output": {
+        "route": "rag",
+        "intent": "documental",
+        "entity": "documento",
+        "bases": ["normativa"],
+        "filters": {},
+        "operations": [],
+        "aggregation_field": null,
+        "group_by": [],
+        "order_by": [],
+        "limit": null,
+        "semantic_query": "documentos exigidos para habilitação na Lei 14.133",
+        "needs_document_retrieval": true
+      },
+      "expected": {
+        "route": "rag",
+        "entity": "documento",
+        "bases": ["normativa"],
+        "operations_equals": []
+      },
+      "note": "Cobertura da base normativa, independente dos documentos PNCP."
+    },
+    {
+      "id": "structured_orgao_com_acento",
+      "question": "Quais contratos da Fundação Oswaldo Cruz foram publicados em 2026?",
+      "simulated_llm_output": {
+        "route": "structured",
+        "intent": "lookup",
+        "entity": "contrato",
+        "bases": ["estruturada"],
+        "filters": {"orgao": "Fundação Oswaldo Cruz", "ano": 2026},
+        "operations": ["list"],
+        "aggregation_field": null,
+        "group_by": [],
+        "order_by": [],
+        "limit": 20,
+        "semantic_query": null,
+        "needs_document_retrieval": false
+      },
+      "expected": {
+        "route": "structured",
+        "entity": "contrato",
+        "bases": ["estruturada"],
+        "operations_equals": ["list"],
+        "filters": {"ano": 2026, "orgao": "Fundação Oswaldo Cruz"}
+      },
+      "note": "Cobertura de filtro textual com acento na rota estruturada."
+    }
+  ]
+}

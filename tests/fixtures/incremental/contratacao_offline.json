@@ -1,0 +1,27 @@
+{
+  "strategy": "endpoint",
+  "watermark_value": "2023-04-30T23:59:59Z",
+  "pages": [
+    {
+      "cursor": "1",
+      "records": [
+        {
+          "external_id": "00000000000000-1-000001/2023",
+          "source_url": "offline://fixture/contratacao/1",
+          "payload": {
+            "numeroControlePNCP": "00000000000000-1-000001/2023",
+            "objetoCompra": "Registro sintético exclusivo da simulação offline",
+            "dataAtualizacaoGlobal": "2023-04-20T12:00:00Z",
+            "unidadeOrgao": {
+              "ufSigla": "RJ"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "cursor": "2",
+      "records": []
+    }
+  ]
+}
