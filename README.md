@@ -4,7 +4,7 @@ Um assistente que responde, em linguagem natural, perguntas sobre contratações
 
 Projeto desenvolvido pelo **Time 03** na residência **TIC em Trilhas** (PUC-Rio / Instituto ECOA). Esta é a minha cópia individual para portfólio; os créditos de toda a equipe estão no fim deste arquivo.
 
-> **Vídeo de demonstração (até 5 min):** link a ser adicionado aqui.
+> **Vídeo de demonstração 
 
 ---
 
